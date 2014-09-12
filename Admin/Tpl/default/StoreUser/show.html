@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css">
+        	<link rel="stylesheet" href="../Public/demo/css/style.css" type="text/css" media="all" />
+            <script language="javascript" type="text/javascript" src="__PUBLIC__/js/Validform/jquery-1.9.1.min.js"></script>
+            <script language="javascript" type="text/javascript" src="../Public/Js/datepicker/WdatePicker.js"></script>
+            <script language="javascript" type="text/javascript" src="__PUBLIC__/js/Validform/Validform_v5.3.2.js"></script>
+            <script src="__PUBLIC__/js/admincp.js?SES" type="text/javascript"></script>
+            <script type="text/javascript">
+				$(function(){
+					//$(".registerform").Validform();  //就这一行代码！;
+					//$.Tipmsg.r=" ";//更改默认提示信息;
+					$(".registerform").Validform({
+						tiptype:3,
+						showAllError:false
+					});
+				})
+			</script>
+            <title>拿回扣</title>
+    </head>
+    <body>
+        <table width="90%" border="0" align="center" cellpadding="3" cellspacing="0" class="small">
+            <tr>
+                <td align="left" class="Big"><img src="__PUBLIC__/images/notify_new.gif" align="absmiddle"><span class="big3"> 查看用户</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span style="font-size:12px;"><a href="__URL__" style="font-size:12px;">返回用户列表</a><img src="__PUBLIC__/images/f_ico.png" align="absmiddle"></span>
+                </td>
+            </tr>
+        </table>
+        <form name="save" class="registerform" method="post" action="__URL__/insert">
+            <table class="TableBlock" border="0" width="90%" align="center">
+            	<tr>
+                    <td align="left" class="TableContent" width="15%"> ID：</td>
+                    <td align="left" class="TableData">
+                        {$vo.id}
+                    </td>
+                </tr>
+            	<tr>
+                    <td align="left" class="TableContent" width="15%"> 姓名：</td>
+                    <td align="left" class="TableData">
+                        {$vo.name}
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%"> 用户名：</td>
+                    <td align="left" class="TableData">
+                        {$vo.username} 
+                    </td>
+                </tr>
+                 <tr>
+                    <td align="left" class="TableContent" width="15%">性别：</td>
+                    <td align="left" class="TableData">
+						{$vo.sex}
+					</td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%"> 出生日期：</td>
+                    <td align="left" class="TableData">
+                        {$vo.birthday|toDate='Y-m-d'}  
+                    </td> 
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%"> 联系邮箱：</td>
+                    <td align="left" class="TableData">
+                        {$vo.email}  
+                    </td> 
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%"> 手机：</td>
+                    <td align="left" class="TableData">
+                        {$vo.phone}
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%"> 我的返利：</td>
+                    <td align="left" class="TableData">
+                        ￡{$vo.cahsback}
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%">头像：</td>
+                    <td align="left" class="TableData">
+                    	<img src="__ROOT__/{$vo.photo}" style="width: 50px;height: 50px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%">身份证或护照：</td>
+                    <td align="left" class="TableData">
+                    	<img src="__ROOT__/{$vo.IDCard}" style="width: 50px;height: 50px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%">身份认证状态：</td>
+                    <td align="left" class="TableData">
+						<eq name="vo.is_auth" value="1">未认证</eq>
+						<eq name="vo.is_auth" value="2">已认证</eq>
+						<eq name="vo.is_auth" value="3">待审核</eq>
+					</td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%">用户状态：</td>
+                    <td align="left" class="TableData">
+						<eq name="vo.status" value="0">正常</eq>
+						<eq name="vo.status" value="1">禁用</eq>
+					</td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css">
+        	<link rel="stylesheet" href="../Public/demo/css/style.css" type="text/css" media="all" />
+            <script language="javascript" type="text/javascript" src="__PUBLIC__/js/Validform/jquery-1.9.1.min.js"></script>
+            <script language="javascript" type="text/javascript" src="__PUBLIC__/js/Validform/Validform_v5.3.2.js"></script>
+            <script src="__PUBLIC__/js/admincp.js?SES" type="text/javascript"></script>
+            <script type="text/javascript">
+				$(function(){
+					//$(".registerform").Validform();  //就这一行代码！;
+					//$.Tipmsg.r=" ";//更改默认提示信息;
+					$(".registerform").Validform({
+						tiptype:3,
+						showAllError:false
+					});
+				})
+			</script>
+            <title>拿回扣</title>
+    </head>
+    <body>
+        <table width="90%" border="0" align="center" cellpadding="3" cellspacing="0" class="small">
+            <tr>
+                <td align="left" class="Big"><img src="__PUBLIC__/images/arrow.gif" align="absmiddle"><span class="big3"> 汇率更新</span>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+        </table>
+        <SELECT name="commodityList" id="commodityList" style="display:none;">
+			<volist name="commodityList" id="volist">
+				<option value="{$volist.store_id}-{$volist.id}">{$volist.cn_name}</option>
+			</volist>
+		</SELECT>
+        <form name="save" class="registerform" method="post" action="__URL__/setting">
+            <table class="TableBlock" border="0" width="90%" align="center">
+            	<tr class="TableControl">
+                    <td colspan="2" nowrap height="35">
+                    	详细信息
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%">互联网实时汇率：</td>
+                    <td align="left" class="TableData">
+                        1英镑={$vo.rate}人民币元<br/>汇率来自中国银行，更新时间：{$vo.create_time|toDate='Y-m-d H:i:s'}
+                    </td> 
+                </tr>
+                 <tr>
+                    <td align="left" class="TableContent" width="15%">呈现汇率：</td>
+                    <td align="left" class="TableData">
+                        1英镑=<input type="text" class="BigInput" id="rate" name="rate" value="{$voShow.rate}" datatype="/^\d+(\.\d{1,2})?$/" nullmsg="请输入数值！" errormsg="输入格式不正确！">人民币元 <div style="display:inline;" class="Validform_checktip"></div>  
+                    </td> 
+                </tr>
+                <tr align="center" class="TableControl">
+                    <td colspan="2" nowrap height="35">
+                        <!-- onclick="sendForm();" -->
+                        <input type="hidden" class="medium bLeft" name="id" value="{$voShow.id}">
+                        <input type="submit" name="Submit" value="保存信息" class="BigButton" ></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

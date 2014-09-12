@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css">
+        	<link rel="stylesheet" href="../Public/demo/css/style.css" type="text/css" media="all" />
+            <script language="javascript" type="text/javascript" src="__PUBLIC__/js/Validform/jquery-1.9.1.min.js"></script>
+            <script language="javascript" type="text/javascript" src="../Public/Js/datepicker/WdatePicker.js"></script>
+            <script language="javascript" type="text/javascript" src="__PUBLIC__/js/Validform/Validform_v5.3.2.js"></script>
+            <script src="__PUBLIC__/js/admincp.js?SES" type="text/javascript"></script>
+            <script type="text/javascript">
+				$(function(){
+					//$(".registerform").Validform();  //就这一行代码！;
+					//$.Tipmsg.r=" ";//更改默认提示信息;
+					$(".registerform").Validform({
+						tiptype:3,
+						showAllError:false
+					});
+				})
+			</script>
+            <title>拿回扣</title>
+    </head>
+    <body>
+        <table width="90%" border="0" align="center" cellpadding="3" cellspacing="0" class="small">
+            <tr>
+                <td align="left" class="Big"><img src="__PUBLIC__/images/notify_new.gif" align="absmiddle"><span class="big3"> 编辑用户</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span style="font-size:12px;"><a href="__URL__" style="font-size:12px;">返回用户列表</a><img src="__PUBLIC__/images/f_ico.png" align="absmiddle"></span>
+                </td>
+            </tr>
+        </table>
+        <form name="save" class="registerform" method="post" action="__URL__/update" enctype="multipart/form-data">
+            <table class="TableBlock" border="0" width="90%" align="center">
+            	<tr>
+                    <td align="left" class="TableContent" width="15%"> ID：</td>
+                    <td align="left" class="TableData">
+                        <input type="text" class="BigInput" id="id" name="id" value="{$vo.id}" disabled="disabled">
+                    </td>
+                </tr>
+            	<tr>
+                    <td align="left" class="TableContent" width="15%"> 姓名：</td>
+                    <td align="left" class="TableData">
+                        <input type="text" class="BigInput" id="name" name="name" value="{$vo.name}" datatype="*" nullmsg="请输入姓名！" errormsg="请输入姓名！" > <div style="display:inline;" class="Validform_checktip"></div> 
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%"> 用户名：</td>
+                    <td align="left" class="TableData">
+                        <input type="text" class="BigInput" id="username" name="username" disabled="disabled" value="{$vo.username}" datatype="e" nullmsg="请输入用户名！" errormsg="用户名格式不正确！" > <div style="display:inline;" class="Validform_checktip"></div> 
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%"> 密码：</td>
+                    <td align="left" class="TableData">
+                        <input type="password" class="BigInput" id="password" name="password" value="" ignore="ignore" datatype="*6-18" nullmsg="请输入密码！" errormsg="密码范围在6~18位之间！"> <div style="display:inline;" class="Validform_checktip">如果不修改，该项可不填！</div>  
+                    </td> 
+                </tr>
+                 <tr>
+                    <td align="left" class="TableContent" width="15%">性别：</td>
+                    <td align="left" class="TableData">
+                        <SELECT class="BigInput" name="sex" id="sex" datatype="*" nullmsg="请选择性别！" errormsg="请选择性别！">
+							<option <eq name="vo.sex" value="男">selected</eq> value="男">男</option>
+							<option <eq name="vo.sex" value="女">selected</eq> value="女">女</option>
+						</SELECT>  <div style="display:inline;" class="Validform_checktip"></div> 
+					</td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%"> 出生日期：</td>
+                    <td align="left" class="TableData">
+                        <input type="text" class="BigInput" id="birthday" name="birthday" value="{$vo.birthday|toDate='Y-m-d'}" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" datatype="*" nullmsg="请选择出生日期！" errormsg="出生日期格式不正确！" > <div style="display:inline;" class="Validform_checktip"></div>  
+                    </td> 
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%"> 联系邮箱：</td>
+                    <td align="left" class="TableData">
+                        <input type="text" class="BigInput" id="email" name="email" value="{$vo.email}" datatype="e" nullmsg="请输入联系邮箱！" errormsg="联系邮箱格式不正确！"> <div style="display:inline;" class="Validform_checktip"></div>  
+                    </td> 
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%"> 手机：</td>
+                    <td align="left" class="TableData">
+                        <input type="text" class="BigInput" id="phone" name="phone" value="{$vo.phone}" datatype="m" nullmsg="请输入手机！" errormsg="手机格式不正确！"> <div style="display:inline;" class="Validform_checktip"></div>  
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%"> 我的返利：</td>
+                    <td align="left" class="TableData">
+                        <input type="text" class="BigInput" id="cahsback" name="cahsback" value="{$vo.cahsback}" datatype="/^\d+(\.\d{1,2})?$/" nullmsg="请输入返利！" errormsg="返利格式不正确！">英镑 <div style="display:inline;" class="Validform_checktip"></div>  
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%">头像：</td>
+                    <td align="left" class="TableData">
+                    	<img src="__ROOT__/{$vo.photo}" style="width: 50px;height: 50px;"/>
+                        <input type="file" id="photo" name="photo" ignore="ignore" datatype="/^.*?\.(jpg|png|bmp)$/" nullmsg="请选择头像！" errormsg="头像格式不正确！"/>&nbsp;&nbsp;<span style="font-size: 12px;">图片大小：61×61，格式仅限jpg、png、bmp</span> 
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%">身份证或护照：</td>
+                    <td align="left" class="TableData">
+                    	<img src="__ROOT__/{$vo.IDCard}" style="width: 50px;height: 50px;"/>
+                        <input type="file" id="IDCard" name="IDCard" ignore="ignore" datatype="/^.*?\.(jpg|png|bmp)$/" nullmsg="请选择图片！" errormsg="图片格式不正确！"/>&nbsp;&nbsp;<span style="font-size: 12px;">图片大小：61×61，格式仅限jpg、png、bmp</span> 
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%">身份认证状态：</td>
+                    <td align="left" class="TableData">
+                        <SELECT class="BigInput" name="is_auth" id="is_auth" datatype="*" nullmsg="请选择身份认证状态！" errormsg="请选择身份认证状态！">
+							<option <eq name="vo.is_auth" value="1">selected</eq> value="1">未认证</option>
+							<option <eq name="vo.is_auth" value="2">selected</eq> value="2">已认证</option>
+							<option <eq name="vo.is_auth" value="3">selected</eq> value="3">待审核</option>
+						</SELECT>  <div style="display:inline;" class="Validform_checktip"></div> 
+					</td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%">用户状态：</td>
+                    <td align="left" class="TableData">
+                        <SELECT class="BigInput" name="status" id="status" datatype="*" nullmsg="请选择用户状态！" errormsg="请选择用户状态！">
+							<option <eq name="vo.status" value="0">selected</eq> value="0">正常</option>
+							<option <eq name="vo.status" value="1">selected</eq> value="1">禁用</option>
+						</SELECT>  <div style="display:inline;" class="Validform_checktip"></div> 
+					</td>
+                </tr>
+                <tr align="center" class="TableControl">
+                    <td colspan="2" nowrap height="35">
+                        <!-- onclick="sendForm();" -->
+                        <input type="hidden" class="medium bLeft" name="id" value="{$vo.id}">
+                        <input type="submit" name="Submit" value="保存信息" class="BigButton" ></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css">
+        	<link rel="stylesheet" href="../Public/demo/css/style.css" type="text/css" media="all" />
+            <script language="javascript" type="text/javascript" src="__PUBLIC__/js/Validform/jquery-1.9.1.min.js"></script>
+            <script language="javascript" type="text/javascript" src="../Public/Js/datepicker/WdatePicker.js"></script>
+            <script language="javascript" type="text/javascript" src="__PUBLIC__/js/Validform/Validform_v5.3.2.js"></script>
+            <script src="__PUBLIC__/js/admincp.js?SES" type="text/javascript"></script>
+            <script type="text/javascript">
+				$(function(){
+					//$(".registerform").Validform();  //就这一行代码！;
+					//$.Tipmsg.r=" ";//更改默认提示信息;
+					$(".registerform").Validform({
+						tiptype:3,
+						showAllError:false
+					});
+				})
+			</script>
+            <title>拿回扣</title>
+    </head>
+    <body>
+        <table width="90%" border="0" align="center" cellpadding="3" cellspacing="0" class="small">
+            <tr>
+                <td align="left" class="Big"><img src="__PUBLIC__/images/notify_new.gif" align="absmiddle"><span class="big3"> 编辑支付记录</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span style="font-size:12px;"><a href="__URL__/PayList/id/{$id}" style="font-size:12px;">返回支付记录</a><img src="__PUBLIC__/images/f_ico.png" align="absmiddle"></span>
+                </td>
+            </tr>
+        </table>
+        <form name="save" class="registerform" method="post" action="__URL__/updatePay">
+            <table class="TableBlock" border="0" width="90%" align="center">
+            	 <tr>
+                    <td align="left" class="TableContent" width="15%"> 消费类型：</td>
+                    <td align="left" class="TableData">
+                        <SELECT class="BigInput" name="type" id="type" datatype="*" nullmsg="请选择消费类型！" errormsg="请选择消费类型！">
+							<option <eq name="vo.type" value="1">selected</eq> value="1">支出</option>
+							<option <eq name="vo.type" value="2">selected</eq> value="2">收入</option>
+						</SELECT>  <div style="display:inline;" class="Validform_checktip"></div> 
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%"> 交易金额：</td>
+                    <td align="left" class="TableData">
+                        <input type="text" class="BigInput" id="money" name="money" value="{$vo.money}" datatype="/^\d+(\.\d{1,2})?$/" nullmsg="请选择交易金额！" errormsg="请选择交易金额！"/> <div style="display:inline;" class="Validform_checktip"></div> 
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%"> 交易状态：</td>
+                    <td align="left" class="TableData">
+                        <SELECT class="BigInput" name="status" id="status" datatype="*" nullmsg="请选择交易状态！" errormsg="请选择交易状态！">
+							<option <eq name="vo.status" value="1">selected</eq> value="1">交易成功</option>
+							<option <eq name="vo.status" value="2">selected</eq> value="2">交易失败</option>
+							<option <eq name="vo.status" value="3">selected</eq> value="3">等待交易</option>
+						</SELECT>  <div style="display:inline;" class="Validform_checktip"></div> 
+					</td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%"> 交易时间：</td>
+                    <td align="left" class="TableData">
+                        <input type="text" class="BigInput" style="cursor:pointer;" id="create_time" name="create_time" value="{$vo.create_time|toDate='Y-m-d H:i:s'}" onClick="WdatePicker({dateFmt:'yyyy-MM-dd H:mm:ss'})" datatype="*" nullmsg="请选择交易时间！" errormsg="请选择交易时间！" /> <div style="display:inline;" class="Validform_checktip"></div> 
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%"> 来源或去向：</td>
+                    <td align="left" class="TableData">
+                        <TEXTAREA class="BigInput" name="fate" rows="7" cols="40" ignore="ignore" datatype="*" errormsg="请输入来源或去向！" >{$vo.fate}</textarea>&nbsp;&nbsp; <div style="display:inline;" class="Validform_checktip"></div>
+                    </td>
+                </tr>
+                <tr align="center" class="TableControl">
+                    <td colspan="2" nowrap height="35">
+                        <!-- onclick="sendForm();" -->
+                        <input type="hidden" class="medium bLeft" name="id" value="{$vo.id}">
+                        <input type="hidden" class="medium bLeft" name="store_id" value="{$vo.store_id}">
+                        <input type="submit" name="Submit" value="保存信息" class="BigButton" ></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

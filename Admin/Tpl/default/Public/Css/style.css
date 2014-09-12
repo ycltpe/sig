@@ -1,0 +1,33 @@
+charset utf-8;
+* { margin:0; padding:0;}
+body { margin:0 auto; font-size:12px; position:static; color:#999; font-family:Arial, Helvetica, sans-serif, "SimSun";}
+ul, dl, dd, h1, h2, h3, h4, h5, h6, form, p { margin:0; padding:0;}
+img { border:none;}
+ul { list-style:none;}
+.clear { clear:both;}
+a { color:#666; text-decoration:none;}
+a:hover { color:#0078b6; text-decoration:underline;}
+a, area { blr:expression(this.onFocus=this.blur());}
+input { outline:0;}
+/* for IE */
+a:focus { outline:0;}
+.left{ float:left;}
+.right{ float:right;}
+.none{ display:none;}
+.clearfix:after{ display:block; font-size:0; content:"."; clear:both; height:0; visibility:hidden;}
+*html .clearfix{ height:1%;}
+/***content***/
+#content{ width:543px; margin:0 auto; overflow:hidden; height:340px;}
+#content_left{ width:139px; float:left; margin-right:20px;}
+.content_l{ background:url(../images/logo.png) no-repeat; width:139px; height:173px;}
+#content_left dl{ margin:10px 0 0 5px;}
+#content_left dl dd{ font:16px/16px "Microsoft YaHei"; text-align:center; color:#FFF; margin-top:10px;} 
+#content_right{ float:left; width:300px; height:320px; background:url(../images/login_bj.jpg) no-repeat; padding:10px 42px 0;}
+.username{ background:url(../images/bj.png) no-repeat; width:300px; height:48px; margin-top:20px; *margin-top:30px;}
+.password{ background:url(../images/bj.png) no-repeat 0 -68px; width:300px; height:48px; margin-top:20px;}
+.username input,.password input{ height:42px; margin:1px 0 0 10px; padding:0; width:250px; border:1px solid #FFF; font-size:14px; vertical-align:middle; line-height:42px;}
+.btn{ margin-top:20px;}
+.btn input{ background:url(../images/login.jpg) no-repeat; width:300px; height:48px; cursor:pointer; border:none;}
+.type{ margin-top:20px; overflow:hidden;}
+.type .ios{ float:left; background:url(../images/ios.jpg) no-repeat; width:110px; height:64px; text-indent:-9999px;}
+.type .android{ background:url(../images/android.jpg) no-repeat; width:142px; float:right;}
