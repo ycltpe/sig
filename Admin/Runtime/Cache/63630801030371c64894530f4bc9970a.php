@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -57,9 +57,9 @@
             <div id="content" class="ui-content fn-clear" coor="default" coor-rate="0.02">
                 <div class="ui-grid-21" coor="content">
                     <div class="ui-grid-21 ui-grid-right record-tit" coor="title">
-                        <h2 class="ui-tit-page">Banner设置</h2>
+                        <h2 class="ui-tit-page">案例管理</h2>
                         <div class="record-tit-amount">
-                            <p>总共有 <span class="number">{$count}</span>条数据
+                            <p>总共有 <span class="number"><?php echo ($count); ?></span>条数据
                             </p>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
 					<div class="ui-form-item ui-form-item-time">
 
                         <div class="submit-time-container ">
-							<input type="button" value="   新增Banner" style="margin-left:970px" class="BigButtonBHover" onClick="javascript:window.location = '__URL__/add'">
+							<input type="button" value="   新增案例" style="margin-left:970px" class="BigButtonBHover" onClick="javascript:window.location = '__URL__/add'">
 						</div>
                     </div>
                  </div>
@@ -102,7 +102,7 @@
                             <div class="ui-tab-trigger">
                                 <ul class="fn-clear">
                                     <li class="ui-tab-trigger-item  ui-tab-trigger-item-current">
-                                        <a href="__URL__/index" class="ui-tab-trigger-text">Banner信息</a></li>
+                                        <a href="__URL__/index" class="ui-tab-trigger-text">案例信息</a></li>
 
                                 </ul>
                             </div>
@@ -118,25 +118,21 @@
                                                     <input type="checkbox" class="checkbox" value="1" name="chkall" onClick="check_all(this)" /></th>
                                                 <th width="50">编号</th>
                                                 <th width="300">标题</th>
-                                                <th width="260">小标题</th>
                                                 <th> </th>
                                                 <th width="70">操作</th>
                                             </tr>
                                         </thead>
                                         <tbody>
 
-                                        <foreach item='vs' name='list'>
-                                            <tr >
+                                        <?php if(is_array($list)): foreach($list as $key=>$vs): ?><tr >
                                                 <td class="checkbox">
-                                                    <input type="checkbox" name="id[]" value="{$vs.id}" class="checkbox" /></td>
+                                                    <input type="checkbox" name="id[]" value="<?php echo ($vs["id"]); ?>" class="checkbox" /></td>
                                                 </td>
-                                                <th>{$vs.id}</th>
-                                                <th>{$vs.title}</th>
-                                                <th>{$vs.lit_title}</th>
+                                                <th><?php echo ($vs["id"]); ?></th>
+                                                <th><?php echo ($vs["title"]); ?></th>
                                                 <th></th>
-                                                <td ><a href="__URL__/edit/id/{$vs.id}">编辑</a></td>
-                                            </tr>
-                                        </foreach>
+                                                <td ><a href="__URL__/edit/id/<?php echo ($vs["id"]); ?>">编辑</a></td>
+                                            </tr><?php endforeach; endif; ?>
                                         </tbody>
                                     </table>
 
@@ -154,7 +150,7 @@
                                     </div>
 
                                     <div class="page page-nobg fn-right">
-                                        <span class="page-link">{$page}</span>
+                                        <span class="page-link"><?php echo ($page); ?></span>
                                     </div>
                                     <!-- /分页 -->
                                 </div>
@@ -187,5 +183,3 @@
         </script>
     </body>
 </html>
-
-

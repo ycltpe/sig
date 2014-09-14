@@ -1,0 +1,28 @@
+<?php
+return array (
+  0 => 'id',
+  1 => 'en_name',
+  2 => 'cn_name',
+  3 => 'user_id',
+  4 => 'logo',
+  5 => 'pic',
+  6 => 'city_id',
+  7 => 'phone',
+  8 => 'en_description',
+  9 => 'cn_description',
+  10 => 'en_detail',
+  11 => 'cn_detail',
+  12 => 'en_scope_of_business',
+  13 => 'cn_scope_of_business',
+  14 => 'en_address',
+  15 => 'cn_address',
+  16 => 'lng',
+  17 => 'lat',
+  18 => 'postcode',
+  19 => 'pic_piece',
+  20 => 'keywords',
+  21 => 'create_time',
+  '_autoinc' => true,
+  '_pk' => 'id',
+);
+?>

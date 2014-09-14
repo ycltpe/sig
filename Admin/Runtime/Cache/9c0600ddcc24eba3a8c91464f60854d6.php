@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -59,7 +59,7 @@
                     <div class="ui-grid-21 ui-grid-right record-tit" coor="title">
                         <h2 class="ui-tit-page">Banner设置</h2>
                         <div class="record-tit-amount">
-                            <p>总共有 <span class="number">{$count}</span>条数据
+                            <p>总共有 <span class="number"><?php echo ($count); ?></span>条数据
                             </p>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                             <div class="ui-tab-trigger">
                                 <ul class="fn-clear">
                                     <li class="ui-tab-trigger-item  ui-tab-trigger-item-current">
-                                        <a href="__URL__/index" class="ui-tab-trigger-text">Banner信息</a></li>
+                                        <a href="__URL__/index" class="ui-tab-trigger-text">幻灯片信息</a></li>
 
                                 </ul>
                             </div>
@@ -125,18 +125,16 @@
                                         </thead>
                                         <tbody>
 
-                                        <foreach item='vs' name='list'>
-                                            <tr >
+                                        <?php if(is_array($list)): foreach($list as $key=>$vs): ?><tr >
                                                 <td class="checkbox">
-                                                    <input type="checkbox" name="id[]" value="{$vs.id}" class="checkbox" /></td>
+                                                    <input type="checkbox" name="id[]" value="<?php echo ($vs["id"]); ?>" class="checkbox" /></td>
                                                 </td>
-                                                <th>{$vs.id}</th>
-                                                <th>{$vs.title}</th>
-                                                <th>{$vs.lit_title}</th>
+                                                <th><?php echo ($vs["id"]); ?></th>
+                                                <th><?php echo ($vs["title"]); ?></th>
+                                                <th><?php echo ($vs["lit_title"]); ?></th>
                                                 <th></th>
-                                                <td ><a href="__URL__/edit/id/{$vs.id}">编辑</a></td>
-                                            </tr>
-                                        </foreach>
+                                                <td ><a href="__URL__/edit/id/<?php echo ($vs["id"]); ?>">编辑</a></td>
+                                            </tr><?php endforeach; endif; ?>
                                         </tbody>
                                     </table>
 
@@ -154,7 +152,7 @@
                                     </div>
 
                                     <div class="page page-nobg fn-right">
-                                        <span class="page-link">{$page}</span>
+                                        <span class="page-link"><?php echo ($page); ?></span>
                                     </div>
                                     <!-- /分页 -->
                                 </div>
@@ -187,5 +185,3 @@
         </script>
     </body>
 </html>
-
-
