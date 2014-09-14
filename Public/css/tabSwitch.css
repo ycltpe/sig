@@ -1,0 +1,18 @@
+﻿#TabSwitch{margin-bottom:0px;}
+#TabSwitch ul{padding:5px 0 0 15px;overflow:auto;zoom:1;}
+#TabSwitch li{background-color:#FFF;border:1px solid #c9dfed;border-bottom:0;color:#37A;float:left;height:18px;line-height:18px;list-style:none;margin:2px 3px 0 0;padding:3px 10px;}
+#TabSwitch li a{text-decoration:none;color:#37A;}
+#TabSwitch li a:hover{color:#FF8E8E;}
+#TabSwitch li:hover a{color:#f60;}
+#TabSwitch li.active{background-color:#628DB7;border-left:1px solid #628DB7;border-right:1px solid #628DB7;border-top:3px solid #628DB7;font-weight:bold;margin:0 3px 0 0;}
+#TabSwitch li.active a{color:#FFF;text-decoration:none;}
+#TabSwitch p.switch{margin:0;background-color:#EAF3FA;color:#006985;padding:10px;}
+#TabSwitch p.switch a{color:#006985;display:inline;margin:0 6px;padding:4px 10px;text-decoration:none;}
+#TabSwitch p.switch a:hover{color:#F60;text-decoration:underline;}
+#TabSwitch p.switch a.active{color:#333;font-weight:bold;text-decoration:none;}
+#TabSwitch p.switch a.show{display:inline;}
+#TabSwitch p.switch a.hidden{display:none;}
+#NoticeBlock{background-color:#fef7db;margin:10px 0;padding:8px 10px;border:1px solid #f0dda5;overflow:hidden;zoom:1;}
+.icon{background:url("../images/mix-icon.gif") no-repeat scroll 0 -240px transparent;display:inline-block;float:left;height:16px;width:20px;}
+.icon-content{float:left;height:17px;*padding-top:3px;}
+.icon-content a{margin-left:10px;font-family:"宋体";}

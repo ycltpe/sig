@@ -1,0 +1,296 @@
+#PageHead {
+	height: 10px;
+}
+.ButtonStyle {
+	border: 1px solid #87a3c1;
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#ffffff,endcolorstr=#c5e7ff,gradientType=0);
+	color: #004a7d;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 1px;
+	cursor: hand;
+}
+
+select {
+	HEIGHT: 18px; 
+	BACKGROUND-COLOR: #FFFFFF;
+	font-size: 12px;
+	color: #004779;
+}
+
+.scrollStyle {
+	overflow: auto;
+	height: 100%;
+}
+
+.writeTD {
+	BORDER: #91c0e3 1px solid; 
+}
+
+.InputAreaStyle {
+	BORDER: #91c0e3 1px solid; 
+	width: 100%;
+	HEIGHT: 95%; 
+	BACKGROUND-COLOR: #FFFFFF;
+	color: #004779;
+}
+
+.InputStyle {
+	BORDER: #91c0e3 1px solid; 
+	width: 100%;
+	HEIGHT: auto; 
+	BACKGROUND-COLOR: #FFFFFF;
+	color: #004779;
+}
+
+.InputStyle1{
+	BORDER-TOP: #CCCCCC 1px solid; 
+	BORDER-BOTTOM: #CCCCCC 1px solid; 
+	BORDER-LEFT: #CCCCCC 1px solid; 
+	BORDER-RIGHT: #CCCCCC 1px solid;
+	BACKGROUND-COLOR: #FFFFFF;
+	color: #616161; 
+	BACKGROUND-COLOR: #FFFFFF;
+	width: 100%;
+	HEIGHT: 22px;
+	padding:3px;
+	font-size:10pt; 
+}
+
+.disabledInput {
+	BORDER-TOP: #91c0e3 1px solid; 
+	BORDER-BOTTOM: #91c0e3 1px solid; 
+	BORDER-LEFT: #91c0e3 1px solid; 
+	BORDER-RIGHT: #91c0e3 1px solid; 
+	width: 100%;
+	HEIGHT: auto; 
+	BACKGROUND-COLOR: #FFFFFF
+}
+
+.errorInput {
+	BORDER-TOP: #91c0e3 1px solid; 
+	BORDER-BOTTOM: #91c0e3 1px solid; 
+	BORDER-LEFT: #91c0e3 1px solid; 
+	BORDER-RIGHT: #91c0e3 1px solid; 
+	HEIGHT: auto; 
+	BACKGROUND-COLOR: #F8E5E4
+	color: #004779;
+}
+
+.notWrite {
+	BORDER-TOP: #91c0e3 0px solid; 
+	BORDER-BOTTOM: #91c0e3 0px solid; 
+	BORDER-LEFT: #91c0e3 0px solid; 
+	BORDER-RIGHT: #91c0e3 0px solid; 
+	HEIGHT: auto; 
+	BACKGROUND-COLOR: transparent;
+	color: #004779;
+}
+
+.notWriteByTextArea {
+	BORDER-TOP: #91c0e3 0px solid; 
+	BORDER-BOTTOM: #91c0e3 0px solid; 
+	BORDER-LEFT: #91c0e3 0px solid; 
+	BORDER-RIGHT: #91c0e3 0px solid; 
+	HEIGHT: 100%;
+	BACKGROUND-COLOR: transparent;
+	color: #004779;
+}
+
+.SelectStyle {
+	width: 100%;
+	BORDER-TOP: #91c0e3 1px solid; 
+	BORDER-BOTTOM: #91c0e3 1px solid; 
+	BORDER-LEFT: #91c0e3 1px solid; 
+	BORDER-RIGHT: #91c0e3 1px solid; 
+	color: #004779;
+}
+
+.MoveButtonStyle{
+	height: 20px;
+	width: 20px;
+	font-family: Webdings;
+	background-color: #dbecf8;
+	border: 1px solid #2886c5;
+	color: #2886c5;
+	
+}
+
+.DetailBlock {
+	width: 220px;
+	height: 35px;
+	line-height: 18px;
+	float: left;
+}
+
+.DetailBlock img {
+	margin-bottom: -3px;
+}
+
+#PageSelectorSelectorArea {
+	float: right;
+}
+
+#PageSelectorMemo {
+	float: left;
+	padding-top: 5px;
+	line-height: 18px;
+}
+
+.PageSelectorSelected {
+	color: #FF0000;
+}
+
+#PageSelectorHead {
+	padding-left: 2px;
+	padding-right: 2px;
+	width: 20px;
+	height: 20px;
+	font-family: webdings;
+	background: url(../images/pageSelector_bg.gif) no-repeat;
+	background-position: 0px 1px;
+}
+
+#PageSelectorNum {
+	background: url(../images/pageSelector_bg.gif) no-repeat;
+	background-position: 0px 3px;
+	padding-left: 0px;
+	padding-right: 2px;
+	padding-top: 4px;
+	width: 20px;
+	height: 20px;
+	font-family: ÀŒÃÂ;
+	text-align: center;
+}
+
+#PageSelectorBar input {
+	height: 18px;
+	width: 20px;
+	font-family: ÀŒÃÂ;
+	border: 1px solid #005791;
+}
+
+#PageSelectorBar A:link {
+	COLOR: #005791; TEXT-DECORATION: none
+}
+
+#PageSelectorBar A:visited {
+	COLOR: #005791; TEXT-DECORATION: none
+}
+
+#PageSelectorBar A:active {
+	COLOR: #005791; TEXT-DECORATION: none
+}
+
+#PageSelectorBar A:hover {
+	COLOR: #005791; TEXT-DECORATION: none;
+}
+
+#Calendar {
+	scrolling: no;
+	border:1px solid #EEEEEE ;
+	position: absolute;
+	width: 160px; 
+	height: 140px;
+	z-index: 200; 
+	filter: progid:DXImageTransform.Microsoft.Shadow(direction=135,color=#dddddd,strength=5);
+}
+
+.Time_Header {
+	width: 160px;
+	height: 25px;
+	background-color: #f3f4f6;
+	color: #0b333c;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	line-height: 25px;
+	border-bottom: 1px solid #b7babc;
+}
+
+.Time_lastMonth {
+	float: left;
+	cursor: hand;
+	width: 20px;
+}
+
+.Time_nextMonth {
+	float: right;
+	cursor: hand;
+	width: 20px;
+}
+
+.Time_title {
+	float:left;
+	width: 30px;
+	text-align: right;
+}
+
+#ChangeYear td {
+	padding-bottom: 2px;
+	cursor: hand;
+}
+
+.inputdate {
+	border:1px solid #7287c6;
+	font-size: 13px;
+	font-style: normal;
+	height: 16px;
+}
+
+#Time_Date {
+	background: #ffffff;
+	color: #2b333c;
+	font-size: 13px;
+}
+
+#Time_Date td {
+	cursor: hand;
+}
+
+.SelectedDate {
+	background: #818181;
+	color: #ffffff;
+}
+
+#Time_Tail {
+	float: right; 
+	padding-right: 10px; 
+	height:20px;
+	cursor: hand;
+}
+
+.updownStyle {
+	width: 15px;
+	height: 7px;
+	font-size: 6Pt;
+}
+
+.TdBlue {
+	BACKGROUND-COLOR: blue;
+}
+
+.Move_font {
+	font-weight: normal;
+	font-family: Webdings;
+	color: #46A523;
+}
+
+.DotButton {
+	border: 1px solid #87a3c1;
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#ffffff,endcolorstr=#c5e7ff,gradientType=0);
+	color: #004a7d;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 1px;
+	cursor: hand;
+
+}
+/*∑÷“≥*/
+.multipage {height:24px;overflow:hidden;font-size:12px;float:left;}
+.multipage span {line-height:22px;height:22px;display:block;background:#fff;float:left;padding:0 10px;border:1px solid #ccc;margin-right:3px;}
+.multipage a {line-height:22px;height:22px;display:block;border:1px solid #ccc;background:#fff;float:left;padding:0 10px;margin-right:3px;}
+.multipage a:hover {border:1px solid #2782D6;}
+.multipage .on {background:#2782D6;color:#fff;font-weight:bold}
+.multipage .go {border:1px solid #ccc;height:21px;line-height:21px;padding:0;}

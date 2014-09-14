@@ -1,0 +1,117 @@
+﻿#CodeWrap{padding:0 10px 20px;}
+#Notice{background:#FEF7DB;height:15px;margin:10px 0;padding:10px;border:1px solid #F0DDA5;}
+#GetCode{background:url("../images/mix-icon.gif") no-repeat scroll 0 -240px transparent;float:left;padding:0 0 1px 20px;*padding:0 20px;height:15px;}
+#ImportCpro{float:right;font-family:"宋体";}
+#QueryBar{background-color:#C7DEEC;border-color:#628DB7 #9DCAE9 #9DCAE9;border-style:solid;border-width:2px 1px 0;padding:5px 15px;height:auto;overflow:auto;zoom:1;}
+#QueryResult{border-color:#CCC;border-right:1px solid #CCC;border-style:none solid solid;border-width:0 1px 0;height:18px;line-height:18px;padding:10px 15px;}
+#QueryResult span,#QueryResult q{display:inline-block;height:15px;line-height:15px;}
+#DeleteQuery{background:url("../images/mix-icon.gif") no-repeat scroll 0 -222px transparent;text-decoration:none;width:20px;}
+#QueryResult.hidden{display:none;}
+#QueryKeyword{color:#F36523;font-weight:bold;}
+#SearchWrap{float:right;}
+#CodeShowBlock .status span.new{color:#F26522;}
+#CodeShowBlock .status span.available{color:#090;}
+#CodeShowBlock .status span.unavailable{color:#999;}
+#CodeShowBlock .status span.stop{color:#999;}
+#CodeShowBlock q{color:#37A;}
+p.no-data{border-bottom:1px solid #CCC;border-top:medium none;color:#999;height:28px;line-height:28px;text-align:center;}
+#SelectWrap{float:right;}
+.page-control .perpage{padding-right:10px;}
+/*分页*/
+.multipage {height:24px;overflow:hidden;font-size:12px;float:left;}
+.multipage span {line-height:22px;height:22px;display:block;background:#fff;float:left;padding:0 10px;border:1px solid #ccc;margin-right:3px;}
+.multipage a {line-height:22px;height:22px;display:block;border:1px solid #ccc;background:#fff;float:left;padding:0 10px;margin-right:3px;}
+.multipage a:hover {border:1px solid #2782D6;}
+.multipage .on {background:#2782D6;color:#fff;font-weight:bold}
+.multipage .go {border:1px solid #ccc;height:21px;line-height:21px;padding:0;}
+/*search*/
+/*  列表型表格样式  */
+.TableList{
+   border:1px #cccccc solid;
+   line-height:21px;
+   font-size:9pt;
+   border-collapse:collapse;
+   padding:3px;
+   float:none;
+   width:98%;
+   margin-left:10px;
+}
+.TableList td{
+   padding:3px;
+   height:30px;
+}
+.TableList .TableHeader td,
+.TableList td.TableHeader{
+   height:30px !important;
+   height:32px;
+   background:#c4de83;
+   border-bottom:1px #9cb269 solid;
+   border-right:1px #9cb269 solid;
+   font-weight:bold;
+   text-align:center;
+   color:#383838;
+   padding:0px;
+}
+.TableList .TableHeader td.TableCorner{
+   background:#99c729;
+}
+.TableList .TableLine1 td,
+.TableList td.TableLine1{
+   background:#FFFFFF;
+   border-bottom:1px #cccccc solid;
+}
+.TableList .TableLine2 td,
+.TableList td.TableLine2{
+   background:#FFFFFF;
+   border-bottom:1px #cccccc solid;
+}
+.TableList .TableData td,
+.TableList td.TableData{
+   background:#FFFFFF;
+   border-bottom:1px #cccccc solid;
+}
+.TableList .TableContent td,
+.TableList td.TableContent{
+   background:#f2f2f2;
+   border-bottom:1px #cfcfcf solid;
+}
+.TableList .TableFooter td,
+.TableList .TableControl td,
+.TableList td.TableFooter,
+.TableList td.TableControl{
+   background: #FFFFFF;
+   border:1px #cccccc solid;
+}
+.TableList .TableRed td,
+.TableList td.TableRed
+{
+   background:#edf6db;
+}
+.TableList .TextColor1 td,
+.TableList td.TextColor1
+{
+   COLOR: #FF6600;
+}
+.TableList .TextColor2 td,
+.TableList td.TextColor2
+{
+   COLOR: #FF0000;
+}
+
+.TableList .TableLeft td,
+.TableList td.TableLeft{
+   background:#c4de83;
+   border-bottom:1px #a7bd74 solid;
+}
+
+.TableList .TableRowHover td,
+.TableList td.TableRowHover
+{
+   background:#edf6db;
+}
+
+.TableList .TableRowActive td,
+.TableList td.TableRowActive
+{
+   background:#e5e5e5;
+}
