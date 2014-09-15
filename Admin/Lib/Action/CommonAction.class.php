@@ -242,7 +242,8 @@ class CommonAction extends Action {
             $pk = $model->getPk();
             $id = $_REQUEST [$pk];
             if (isset($id)) {
-                $condition = array($pk => array('in', explode(',', $id)));
+//                $condition = array($pk => array('in', explode(',', $id)));
+                $condition = array($pk => array('in', implode(',', $id)));
                 $list = $model->where($condition)->delete();
                 if ($list !== false) {
                     $this->success('删除成功！');

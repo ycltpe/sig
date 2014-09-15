@@ -51,8 +51,8 @@
                     <td align="left" class="TableContent" width="15%"> 状态：</td>
                     <td align="left" class="TableData">
                         <SELECT name="status">
-                                <option  value="1">显示</option>
-                                <option  value="0">隐藏</option>
+                            <option <eq name="vo.status" value="1">selected</eq> value="1">显示</option>
+                            <option <eq name="vo.status" value="0">selected</eq> value="0">隐藏</option>
                         </SELECT> 
                     </td>
                 </tr>

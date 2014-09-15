@@ -165,24 +165,8 @@
                 </form>
             </div>
 
-
-
         </div>
 
-
-
-
-
-        <script type="text/javascript">
-            $('select#companyid').change(function() {
-
-                $.get('__URL__/GetCustomer', {companyid: $(this).val()}, function($data) {
-                    $('.orderid').html($data);
-                }
-                );
-            }
-            );
-        </script>
     </body>
 </html>
 
