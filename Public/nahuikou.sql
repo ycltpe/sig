@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_iis
-Source Server Version : 50524
+Source Server Version : 50606
 Source Host           : localhost:3306
 Source Database       : nahuikou
 
 Target Server Type    : MYSQL
-Target Server Version : 50524
+Target Server Version : 50606
 File Encoding         : 65001
 
-Date: 2014-09-15 00:30:13
+Date: 2014-09-15 17:38:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -109,7 +109,7 @@ INSERT INTO `t_admin_user` VALUES ('17', '彭帆', '277088798@qq.com', 'e10adc39
 INSERT INTO `t_admin_user` VALUES ('18', '陈志梅', 'zhimei.chen@sigboat.com', '3dd026ec0fd8578945cd49a5b4946beb', '1', '1409537555', '1409905981');
 INSERT INTO `t_admin_user` VALUES ('19', '凌斌', 'jojojo574@yahoo.com', 'e165d4f2174b66a7d1a95cb204d296eb', '1', '1409597640', '1409951565');
 INSERT INTO `t_admin_user` VALUES ('20', 'tiancaiwu', 'tiancaiwu@sina.com', '22ed349c996633dd4a972f861e18fc56', '1', '1409953457', '1409953505');
-INSERT INTO `t_admin_user` VALUES ('21', 'admin', 'admin@qq.com', '21232f297a57a5a743894a0e4a801fc3', '1', '1409597640', '1410697391');
+INSERT INTO `t_admin_user` VALUES ('21', 'admin', 'admin@qq.com', '21232f297a57a5a743894a0e4a801fc3', '1', '1409597640', '1410750547');
 
 -- ----------------------------
 -- Table structure for `t_app_version`
@@ -301,7 +301,8 @@ CREATE TABLE `t_case` (
   `title` varchar(50) NOT NULL DEFAULT '',
   `thumb` varchar(100) NOT NULL DEFAULT '',
   `description` text NOT NULL,
-  `supportsys` varchar(5) NOT NULL DEFAULT '',
+  `isa` smallint(2) unsigned NOT NULL DEFAULT '1',
+  `isi` smallint(2) unsigned NOT NULL DEFAULT '1',
   `usergroups` varchar(100) NOT NULL DEFAULT '',
   `designstyle` varchar(100) NOT NULL DEFAULT '',
   `is500` smallint(2) unsigned NOT NULL DEFAULT '0',
@@ -309,11 +310,12 @@ CREATE TABLE `t_case` (
   `created` int(11) unsigned NOT NULL DEFAULT '0',
   `status` smallint(2) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_case
 -- ----------------------------
+INSERT INTO `t_case` VALUES ('3', '平安随行', 'Uploads/pic/case/2014/20140915/5416b1bc12db2.png', '<div id=\"u1472\" class=\"u1472\">\r\n	<div id=\"u1472_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\"> </span><span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">行帆科技为平安集团的长期供应商，为平安集团开发了数款移动APP。平安随行是行帆科技为中国平安集团定制开发的第一款应用。</span><span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">主要功能有：语音导航、路况查询、违章查询、新闻资讯、周边搜罗、周边好友、车险服务、趣味游戏、生活服务，</span><span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">为所有车主用户提供行车、资讯、交友、游戏、生活等全面丰富的信息和服务。</span> \r\n		</p>\r\n	</div>\r\n</div>', '1', '1', '123456', '1234567', '1', '1', '1410761939', '1');
 
 -- ----------------------------
 -- Table structure for `t_category`
