@@ -2,6 +2,16 @@
 
 class CaseAction extends CommonAction {
 
+    public function _before_add() {
+        $list = M('CaseCate')->where('status = 1')->select();
+        $this->assign('list', $list);
+    }
+
+    public function _before_edit() {
+        $list = M('CaseCate')->where('status = 1')->select();
+        $this->assign('list', $list);
+    }
+
     public function edit() {
         $model = M('Case');
         $id = $_REQUEST [$model->getPk()];
