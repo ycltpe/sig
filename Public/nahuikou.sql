@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_iis
-Source Server Version : 50606
+Source Server Version : 50524
 Source Host           : localhost:3306
 Source Database       : nahuikou
 
 Target Server Type    : MYSQL
-Target Server Version : 50606
+Target Server Version : 50524
 File Encoding         : 65001
 
-Date: 2014-09-15 17:38:57
+Date: 2014-09-16 01:38:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -299,6 +299,7 @@ DROP TABLE IF EXISTS `t_case`;
 CREATE TABLE `t_case` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL DEFAULT '',
+  `case_cate_id` smallint(5) unsigned NOT NULL,
   `thumb` varchar(100) NOT NULL DEFAULT '',
   `description` text NOT NULL,
   `isa` smallint(2) unsigned NOT NULL DEFAULT '1',
@@ -315,7 +316,39 @@ CREATE TABLE `t_case` (
 -- ----------------------------
 -- Records of t_case
 -- ----------------------------
-INSERT INTO `t_case` VALUES ('3', '平安随行', 'Uploads/pic/case/2014/20140915/5416b1bc12db2.png', '<div id=\"u1472\" class=\"u1472\">\r\n	<div id=\"u1472_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\"> </span><span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">行帆科技为平安集团的长期供应商，为平安集团开发了数款移动APP。平安随行是行帆科技为中国平安集团定制开发的第一款应用。</span><span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">主要功能有：语音导航、路况查询、违章查询、新闻资讯、周边搜罗、周边好友、车险服务、趣味游戏、生活服务，</span><span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">为所有车主用户提供行车、资讯、交友、游戏、生活等全面丰富的信息和服务。</span> \r\n		</p>\r\n	</div>\r\n</div>', '1', '1', '123456', '1234567', '1', '1', '1410761939', '1');
+INSERT INTO `t_case` VALUES ('3', '平安随行', '2', 'Uploads/pic/case/2014/20140915/5416b1bc12db2.png', '<div id=\"u1472\" class=\"u1472\">\r\n	<div id=\"u1472_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\"> </span><span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">行帆科技为平安集团的长期供应商，为平安集团开发了数款移动APP。平安随行是行帆科技为中国平安集团定制开发的第一款应用。</span><span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">主要功能有：语音导航、路况查询、违章查询、新闻资讯、周边搜罗、周边好友、车险服务、趣味游戏、生活服务，</span><span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">为所有车主用户提供行车、资讯、交友、游戏、生活等全面丰富的信息和服务。</span> \r\n		</p>\r\n	</div>\r\n</div>', '1', '1', '123456', '1234567', '1', '1', '1410761939', '1');
+
+-- ----------------------------
+-- Table structure for `t_case_cate`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_case_cate`;
+CREATE TABLE `t_case_cate` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `catename` varchar(50) NOT NULL DEFAULT '',
+  `sort` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `status` smallint(2) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_case_cate
+-- ----------------------------
+INSERT INTO `t_case_cate` VALUES ('1', '移动教育', '0', '1');
+INSERT INTO `t_case_cate` VALUES ('2', '移动金融', '0', '1');
+INSERT INTO `t_case_cate` VALUES ('3', '快销行业', '0', '1');
+INSERT INTO `t_case_cate` VALUES ('4', '医疗健康', '0', '1');
+INSERT INTO `t_case_cate` VALUES ('5', '智能穿戴', '0', '1');
+INSERT INTO `t_case_cate` VALUES ('6', '生活服务', '0', '1');
+INSERT INTO `t_case_cate` VALUES ('7', '美容健身', '0', '1');
+INSERT INTO `t_case_cate` VALUES ('8', '移动信息化', '0', '1');
+INSERT INTO `t_case_cate` VALUES ('9', '移动O2O', '0', '1');
+INSERT INTO `t_case_cate` VALUES ('10', '旅游', '0', '1');
+INSERT INTO `t_case_cate` VALUES ('11', '工具', '0', '1');
+INSERT INTO `t_case_cate` VALUES ('12', '农业', '0', '1');
+INSERT INTO `t_case_cate` VALUES ('13', '汽车', '0', '1');
+INSERT INTO `t_case_cate` VALUES ('14', '房产', '0', '1');
+INSERT INTO `t_case_cate` VALUES ('15', '物流', '0', '1');
+INSERT INTO `t_case_cate` VALUES ('16', '其它', '0', '1');
 
 -- ----------------------------
 -- Table structure for `t_category`
@@ -2414,7 +2447,7 @@ CREATE TABLE `t_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=144 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=147 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_node
@@ -2478,6 +2511,9 @@ INSERT INTO `t_node` VALUES ('140', 'Setting', 'Setting', '站点设置', '0', n
 INSERT INTO `t_node` VALUES ('141', 'Arctype', 'Arctype', '菜单管理', '0', null, '2', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('142', 'Banner', 'Banner', 'Banner设置', '0', null, '3', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('143', 'Case', 'Case', '案例管理', '0', null, '4', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('144', 'CaseCate', 'CaseCate', '案例分类管理', '0', null, '5', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('145', 'Tech', 'Tech', '技术天使', '0', null, '6', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('146', 'Partner', 'Partner', '合作伙伴', '0', null, '7', '1', '2', '0', '15');
 
 -- ----------------------------
 -- Table structure for `t_order`
@@ -2522,6 +2558,27 @@ CREATE TABLE `t_order_feedback` (
 -- ----------------------------
 -- Records of t_order_feedback
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for `t_partner`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_partner`;
+CREATE TABLE `t_partner` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL DEFAULT '',
+  `sort` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `status` smallint(2) NOT NULL DEFAULT '1',
+  `url` varchar(100) NOT NULL DEFAULT '',
+  `logo` varchar(100) NOT NULL DEFAULT '',
+  `created` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_partner
+-- ----------------------------
+INSERT INTO `t_partner` VALUES ('1', '平安', '0', '1', 'http://www.pingan.com', 'Uploads/pic/partner/2014/20140916/541722bb2709d.png', '1410802363');
+INSERT INTO `t_partner` VALUES ('2', '3M', '0', '1', 'http://www.3M.com', 'Uploads/pic/partner/2014/20140916/541723571bc7a.png', '1410802519');
 
 -- ----------------------------
 -- Table structure for `t_partner_with_us`
@@ -2789,6 +2846,29 @@ INSERT INTO `t_store_employee` VALUES ('19', '16', '10059', '1');
 INSERT INTO `t_store_employee` VALUES ('20', '16', '10059', '2');
 INSERT INTO `t_store_employee` VALUES ('21', '17', '10077', '1');
 INSERT INTO `t_store_employee` VALUES ('22', '18', '10083', '1');
+
+-- ----------------------------
+-- Table structure for `t_tech`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_tech`;
+CREATE TABLE `t_tech` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL DEFAULT '',
+  `des` varchar(255) NOT NULL DEFAULT '',
+  `techbg` varchar(100) NOT NULL DEFAULT '',
+  `des1` text NOT NULL,
+  `des2` text NOT NULL,
+  `jihua_mail` varchar(50) NOT NULL DEFAULT '',
+  `qq` varchar(20) NOT NULL DEFAULT '',
+  `mobile` varchar(20) NOT NULL DEFAULT '',
+  `des3` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_tech
+-- ----------------------------
+INSERT INTO `t_tech` VALUES ('1', '以技术开发为条件进行的项目或产品的投资形式', '技术天使（英文为Techangel）,是一种以技术开发为条件进行的项目或产品的投资形式，2014年1月，行帆科技全球首创提出“技术天使”概念，并且成功应用在“财富宝宝”等项目上。技术天使投资的具体操作形式为，首先由行帆科技详细考察创业者有关项目的发展规划、可行性报告，在此基础上为创业者量身打造最为适合的技术团队，并在项目开发的不同时期，为创业者提供有针对性的服务。双方的合作方式为创业者主导，行帆科技技术团队入股，并根据不同创业阶段的服务特点、开发团队在创业团队中的作用，来界定技术服务在整个资本中所', 'Uploads/pic/tech/2014/20140916/54171968b083b.png', '<p>\r\n	行帆科技由三星电子韩国总部归国技术团队创立，联合创始人均毕业于全国顶尖大学（清华、复旦、上交大等），并汇聚了一批来自腾讯、HTC、金蝶等公司的资深工程师，拥有10年手机软件开发经验及8年手机UI与原型设计经验。截至2013年12月，行帆科技已为联合利华、联合技术公司（UTC）、中国平安、宏达电（HTC）、安利等世界五百强企业开发了数十款移动互联网应用精品。行帆科技的合作伙伴包括三星电子、中国电信、华为、加拿大SOTI、韩国VERTEX ID等知名企业。\r\n</p>', '<img src=\"/Uploads/attached/20140916010816_86028.png\" alt=\"\" />\r\n<ol>\r\n	<li>\r\n		由申请者向行帆科技“技术天使”投资评估部门递送商业规划书，提出“技术天使”投资申请。\r\n	</li>\r\n	<li>\r\n		<p>\r\n			行帆科技将组织由公司联合创始人及技术专家参加的项目评审会，并提出评审意见。\r\n		</p>\r\n	</li>\r\n	<li>\r\n		<p>\r\n			行帆科技技术天使投资评估部门将安排申请者与公司技术专家的沟通会，就技术问题进行沟通了解，形成深入分析报告。\r\n		</p>\r\n	</li>\r\n	<li>\r\n		<p>\r\n			行帆科技根据评审意见与深入分析报告，做出合作决断，并择期与申请者就具体合作方式、投资占比、回馈方式等细节问题进行商业谈判。\r\n		</p>\r\n	</li>\r\n	<li>\r\n		<p>\r\n			签订技术天使投资合同。\r\n		</p>\r\n	</li>\r\n	<li>\r\n		<p>\r\n			由行帆科技根据项目具体需求，组成技术团队，与申请者一起对项目细节进行进一步的研究探讨，形成项目原型。\r\n		</p>\r\n	</li>\r\n	<li>\r\n		<p>\r\n			技术团队进入申请者创业团队开始产品开发。\r\n		</p>\r\n	</li>\r\n	<li>\r\n		<p>\r\n			技术团队开发中如遇问题，可向行帆科技总部提出技术支援申请。\r\n		</p>\r\n	</li>\r\n	<li>\r\n		<p>\r\n			项目开发完成后，行帆科技可在产品上线与运营等方面与申请者展开进一步的合作。\r\n		</p>\r\n	</li>\r\n</ol>', 'bp@sigboat.com', '8450-8394', '8450-8394', '<img src=\"/Uploads/attached/20140916010636_77942.png\" alt=\"\" /><br />');
 
 -- ----------------------------
 -- Table structure for `t_user`

@@ -1,18 +1,18 @@
 <?php
 /**
  * KindEditor PHP
- * 
+ *
  * 本PHP程序是演示程序，建议不要直接在实际项目中使用。
  * 如果您确定直接使用本程序，使用之前请仔细确认相关安全设置。
- * 
+ *
  */
 
 require_once 'JSON.php';
 
 //文件保存目录路径
-$save_path = '../attached/';
+$save_path = '../../../../Uploads/attached/';
 //文件保存目录URL
-$save_url = "/Admin/Tpl/default/Public/Js/editor/attached/";
+$save_url = "/Uploads/attached/";
 //定义允许上传的文件扩展名
 $ext_arr = array('gif', 'jpg', 'jpeg', 'png', 'bmp');
 //最大文件大小
@@ -64,7 +64,7 @@ if (empty($_FILES) === false) {
 	}
 	@chmod($file_path, 0644);
 	$file_url = $save_url . $new_file_name;
-	
+
 	header('Content-type: text/html; charset=UTF-8');
 	$json = new Services_JSON();
 	echo $json->encode(array('error' => 0, 'url' => $file_url));
