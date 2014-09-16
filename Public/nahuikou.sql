@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_iis
-Source Server Version : 50606
+Source Server Version : 50524
 Source Host           : localhost:3306
 Source Database       : nahuikou
 
 Target Server Type    : MYSQL
-Target Server Version : 50606
+Target Server Version : 50524
 File Encoding         : 65001
 
-Date: 2014-09-16 17:52:26
+Date: 2014-09-17 00:48:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -109,7 +109,30 @@ INSERT INTO `t_admin_user` VALUES ('17', '彭帆', '277088798@qq.com', 'e10adc39
 INSERT INTO `t_admin_user` VALUES ('18', '陈志梅', 'zhimei.chen@sigboat.com', '3dd026ec0fd8578945cd49a5b4946beb', '1', '1409537555', '1409905981');
 INSERT INTO `t_admin_user` VALUES ('19', '凌斌', 'jojojo574@yahoo.com', 'e165d4f2174b66a7d1a95cb204d296eb', '1', '1409597640', '1409951565');
 INSERT INTO `t_admin_user` VALUES ('20', 'tiancaiwu', 'tiancaiwu@sina.com', '22ed349c996633dd4a972f861e18fc56', '1', '1409953457', '1409953505');
-INSERT INTO `t_admin_user` VALUES ('21', 'admin', 'admin@qq.com', '21232f297a57a5a743894a0e4a801fc3', '1', '1409597640', '1410846915');
+INSERT INTO `t_admin_user` VALUES ('21', 'admin', 'admin@qq.com', '21232f297a57a5a743894a0e4a801fc3', '1', '1409597640', '1410869489');
+
+-- ----------------------------
+-- Table structure for `t_advantage`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_advantage`;
+CREATE TABLE `t_advantage` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL DEFAULT '',
+  `sort` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `status` smallint(2) NOT NULL DEFAULT '1',
+  `logo` varchar(100) NOT NULL DEFAULT '',
+  `created` int(10) unsigned NOT NULL DEFAULT '0',
+  `info` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_advantage
+-- ----------------------------
+INSERT INTO `t_advantage` VALUES ('1', '技术优势', '0', '1', 'Uploads/pic/advantage/2014/20140916/541850e298f31.png', '1410879714', '5年Android与IOS移动开发经验，中国最早一批移动互联网开发者。');
+INSERT INTO `t_advantage` VALUES ('2', '设计优势', '0', '1', 'Uploads/pic/advantage/2014/20140916/5418512d232ad.png', '1410879789', '三星韩国总部工作经验，10年手机开发和设计经验；');
+INSERT INTO `t_advantage` VALUES ('3', '质量保证', '0', '1', 'Uploads/pic/advantage/2014/20140916/54185151069dc.png', '1410879825', '实施CMMI管理流程，零Bug交付；');
+INSERT INTO `t_advantage` VALUES ('4', '产品心态', '0', '1', 'Uploads/pic/advantage/2014/20140916/54185164441ef.png', '1410879844', '实施产品开发流程，把项目经理与产品经理分开管理；');
 
 -- ----------------------------
 -- Table structure for `t_app_version`
@@ -271,6 +294,25 @@ INSERT INTO `t_brand` VALUES ('6', 'LOUIS  VUITTON 路易·威登');
 INSERT INTO `t_brand` VALUES ('7', 'Armani 阿玛尼');
 INSERT INTO `t_brand` VALUES ('8', 'zhonghua 中华');
 INSERT INTO `t_brand` VALUES ('9', '傲凤');
+
+-- ----------------------------
+-- Table structure for `t_brief`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_brief`;
+CREATE TABLE `t_brief` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `img` varchar(100) NOT NULL DEFAULT '',
+  `des` text NOT NULL,
+  `brief` text NOT NULL,
+  `img1` varchar(100) NOT NULL DEFAULT '',
+  `brief1` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_brief
+-- ----------------------------
+INSERT INTO `t_brief` VALUES ('1', 'Uploads/pic/brief/2014/20140916/541856254f8bb.png', '<img title=\"\" src=\"/Uploads/attached/20140916231838_58183.png\" alt=\"\" align=\"\" height=\"110\" width=\"120\" /><img title=\"\" src=\"/Uploads/attached/20140916231838_87464.png\" alt=\"\" align=\"\" height=\"134\" width=\"120\" /><img src=\"/Uploads/attached/20140916231838_51564.png\" alt=\"\" /><img title=\"\" src=\"/Uploads/attached/20140916231839_95319.png\" alt=\"\" align=\"\" height=\"66\" width=\"120\" /><img title=\"\" src=\"/Uploads/attached/20140916231839_15232.png\" alt=\"\" align=\"\" height=\"54\" width=\"120\" /><img title=\"\" src=\"/Uploads/attached/20140916231839_28970.jpg\" alt=\"\" align=\"\" height=\"43\" width=\"120\" /><img title=\"\" src=\"/Uploads/attached/20140916231839_31296.png\" alt=\"\" align=\"\" height=\"47\" width=\"120\" />', '上海行帆信息科技有限公司简称行帆科技或行帆，成立于2012年11月1日，致力于成为中国一流的企业移动互联网服务提供商，专注于企业移动信息化技术开发与服务。公司总部位于上海，并在北京、天津、成都、广州等多地设有研发中心，形成了覆盖全国的集移动互联网战略咨询、产品规划、技术开发与产品维护为一体的服务网络。行帆由三星电子韩国总部归国技术团队创立，汇聚了一批来自腾讯、HTC、金蝶等公司的资深工程师，拥有10年国际专业背景和5年移动互联网经验。\r\n<p>\r\n	行帆科技专注于企业移动互联网解决方案，为企业提供移动应用(APP)、手机网站和微信公众平台的产品或服务，涵盖IOS、Android、Windows Phone、HTML5、微信等主流平台。2014年6月，行帆科技已为联合利华、联合技术公司(UTC)、中国平安、宏达电(HTC)、安利等世界五百强企业开发了近百款移动互联网应用精品，并与多家知名企业建立合作伙伴关系，如三星电子、 中国电信、华为、加拿大SOTI、韩国VERTEX ID等。行帆科技已在移动教育、移动金融、移动O2O、移动办公、智能硬件等领域有大量的APP开发案例，并成为安利、上海财经大学、联合技术公司(UTC)等多家公司长期服务商。\r\n</p>\r\n<p>\r\n	行帆寓意为移动的帆船，英文为Sigboat，即Signal+boat（移动信息的帆船）。公司以“帆船”为Logo，秉承着“创造移动新价值”的理念为企业开拓移动互联网新市场。行帆科技坚信移动互联网正在变革世界，Mobile First正在成为企业移动信息化的基本原则。这是企业的发展机遇，也是行帆的发展机遇，更是每位移动互联网人才的机遇。行帆科技期待与企业和人才一起分享这伟大的机会。\r\n</p>', 'Uploads/pic/brief/2014/20140916/54185bef2a06b.png', '<p>\r\n	行帆科技的企业文化是上进、卓越、分享、快乐。\r\n</p>\r\n<p>\r\n	上进——要求每位员工都有一颗积极向上的心态，让客户和行帆共同进步；\r\n</p>\r\n<p>\r\n	卓越——选择和培养优秀的人才，形成卓越的团队，为客户提供最好的服务；\r\n</p>\r\n<p>\r\n	分享——崇尚技术、产品、管理等知识相互分享，和员工共同分享成长的果实，和客户实现利益双赢；\r\n</p>\r\n<p>\r\n	快乐——注重建设愉快轻松的工作氛围，员工之间自由平等，让员工享受工作，让客户享受满意的服务。\r\n</p>');
 
 -- ----------------------------
 -- Table structure for `t_bussiness_pay`
@@ -2419,6 +2461,52 @@ INSERT INTO `t_help` VALUES ('10', '怎么与顾客聊天？', '怎么与顾客�
 INSERT INTO `t_help` VALUES ('11', '怎么和客服妹妹聊天？', '怎么和客服妹妹聊天？怎么和客服妹妹聊天？怎么和客服妹妹聊天？怎么和客服妹妹聊天？怎么和客服妹妹聊天？', '1', '1406544151');
 
 -- ----------------------------
+-- Table structure for `t_history`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_history`;
+CREATE TABLE `t_history` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL DEFAULT '',
+  `sort` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `status` smallint(2) NOT NULL DEFAULT '1',
+  `created` int(10) unsigned NOT NULL DEFAULT '0',
+  `info` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_history
+-- ----------------------------
+INSERT INTO `t_history` VALUES ('1', '2008年', '0', '1', '1410881812', '开始Android和IOS开发，是中国最早进入移动互联网开发的团队之一');
+INSERT INTO `t_history` VALUES ('2', '2009年', '0', '1', '1410881838', '开发了世界第一款Android双屏电子书阅读，第一款Android PDF阅读器，第一款双屏浏览器');
+INSERT INTO `t_history` VALUES ('3', '2010年', '0', '1', '1410881879', '成立9i移动互联网开发工作室，开发了背单词的APP产品同时帮助一些企业提供APP技术开发服务');
+INSERT INTO `t_history` VALUES ('4', '2011年下半年', '0', '1', '1410881900', '团队获得天使投资，转入课堂外词场产品开发，截至2013年底获得超过500万用户');
+
+-- ----------------------------
+-- Table structure for `t_jobs`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_jobs`;
+CREATE TABLE `t_jobs` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL DEFAULT '',
+  `sort` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `status` smallint(2) NOT NULL DEFAULT '1',
+  `created` int(10) unsigned NOT NULL DEFAULT '0',
+  `desc1` text NOT NULL,
+  `desc2` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_jobs
+-- ----------------------------
+INSERT INTO `t_jobs` VALUES ('1', '技术总监', '0', '1', '1410885502', '<p>\r\n	1、负责整个公司的技术开发与管理，包括自有产品开发和协作开发；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	2、设计移动互联网项目的技术构架，编写相关技术文档；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	3、协助解决技术难点，提供具体解决方案；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	4、管理技术团队，监督项目进度，提升团队技术水平；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	5、参与产品与运营的方案设计，保证方案切实可行，并力求最优化结果。\r\n</p>', '<p>\r\n	1、本科以上学历，计算机及其相关专业，5年以上工作经验；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	2、熟悉Java/C/C++/Objective C/HTML5等编程语言，精通网站和移动应用（包括Android、IOS、Windows Phone和HTML5）开发技术，熟悉企业移动应用开发者优先；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	3、了解网页搜索引擎技术，熟悉大数据量网站的架构方法，具有2年以上网站开发经验以及1年以上移动应用开发经验，IOS和Android开发经验兼有者优先；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	4、具有一定的项目和技术管理能力，有技术团队管理经验者优先；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	5、工作态度好，学习能力强，能够承担一定的工作压力，具备良好的表达和沟通能力以及团队合作精神，具有创业意愿者优先。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	6、英语水平良好，能够使用英文进行听说读写。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	7、符合条件的录用者将直接享受公司股权激励计划。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	如果您对此职位感兴趣，请将您的简历发送至jobs@sigboat.com, 并在标题上注明「技术开发总监」。\r\n</p>');
+INSERT INTO `t_jobs` VALUES ('2', '产品经理', '0', '1', '1410885528', '<p>\r\n	1、负责整个公司的技术开发与管理，包括自有产品开发和协作开发；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	2、设计移动互联网项目的技术构架，编写相关技术文档；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	3、协助解决技术难点，提供具体解决方案；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	4、管理技术团队，监督项目进度，提升团队技术水平；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	5、参与产品与运营的方案设计，保证方案切实可行，并力求最优化结果。\r\n</p>', '<p>\r\n	1、本科以上学历，计算机及其相关专业，5年以上工作经验；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	2、熟悉Java/C/C++/Objective C/HTML5等编程语言，精通网站和移动应用（包括Android、IOS、Windows Phone和HTML5）开发技术，熟悉企业移动应用开发者优先；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	3、了解网页搜索引擎技术，熟悉大数据量网站的架构方法，具有2年以上网站开发经验以及1年以上移动应用开发经验，IOS和Android开发经验兼有者优先；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	4、具有一定的项目和技术管理能力，有技术团队管理经验者优先；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	5、工作态度好，学习能力强，能够承担一定的工作压力，具备良好的表达和沟通能力以及团队合作精神，具有创业意愿者优先。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	6、英语水平良好，能够使用英文进行听说读写。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	7、符合条件的录用者将直接享受公司股权激励计划。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	如果您对此职位感兴趣，请将您的简历发送至jobs@sigboat.com, 并在标题上注明「技术开发总监」。\r\n</p>');
+INSERT INTO `t_jobs` VALUES ('3', 'IOS工程师', '0', '1', '1410885580', '<p>\r\n	1、负责整个公司的技术开发与管理，包括自有产品开发和协作开发；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	2、设计移动互联网项目的技术构架，编写相关技术文档；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	3、协助解决技术难点，提供具体解决方案；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	4、管理技术团队，监督项目进度，提升团队技术水平；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	5、参与产品与运营的方案设计，保证方案切实可行，并力求最优化结果。\r\n</p>', '<p>\r\n	1、本科以上学历，计算机及其相关专业，5年以上工作经验；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	2、熟悉Java/C/C++/Objective C/HTML5等编程语言，精通网站和移动应用（包括Android、IOS、Windows Phone和HTML5）开发技术，熟悉企业移动应用开发者优先；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	3、了解网页搜索引擎技术，熟悉大数据量网站的架构方法，具有2年以上网站开发经验以及1年以上移动应用开发经验，IOS和Android开发经验兼有者优先；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	4、具有一定的项目和技术管理能力，有技术团队管理经验者优先；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	5、工作态度好，学习能力强，能够承担一定的工作压力，具备良好的表达和沟通能力以及团队合作精神，具有创业意愿者优先。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	6、英语水平良好，能够使用英文进行听说读写。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	7、符合条件的录用者将直接享受公司股权激励计划。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	如果您对此职位感兴趣，请将您的简历发送至jobs@sigboat.com, 并在标题上注明「技术开发总监」。\r\n</p>');
+INSERT INTO `t_jobs` VALUES ('4', 'GUI设计经理', '0', '1', '1410885617', '<p>\r\n	1、负责整个公司的技术开发与管理，包括自有产品开发和协作开发；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	2、设计移动互联网项目的技术构架，编写相关技术文档；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	3、协助解决技术难点，提供具体解决方案；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	4、管理技术团队，监督项目进度，提升团队技术水平；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	5、参与产品与运营的方案设计，保证方案切实可行，并力求最优化结果。\r\n</p>', '<p>\r\n	1、本科以上学历，计算机及其相关专业，5年以上工作经验；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	2、熟悉Java/C/C++/Objective C/HTML5等编程语言，精通网站和移动应用（包括Android、IOS、Windows Phone和HTML5）开发技术，熟悉企业移动应用开发者优先；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	3、了解网页搜索引擎技术，熟悉大数据量网站的架构方法，具有2年以上网站开发经验以及1年以上移动应用开发经验，IOS和Android开发经验兼有者优先；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	4、具有一定的项目和技术管理能力，有技术团队管理经验者优先；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	5、工作态度好，学习能力强，能够承担一定的工作压力，具备良好的表达和沟通能力以及团队合作精神，具有创业意愿者优先。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	6、英语水平良好，能够使用英文进行听说读写。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	7、符合条件的录用者将直接享受公司股权激励计划。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	如果您对此职位感兴趣，请将您的简历发送至jobs@sigboat.com, 并在标题上注明「技术开发总监」。\r\n</p>');
+INSERT INTO `t_jobs` VALUES ('5', 'PHP工程师', '0', '1', '1410885664', '<p>\r\n	1、负责整个公司的技术开发与管理，包括自有产品开发和协作开发；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	2、设计移动互联网项目的技术构架，编写相关技术文档；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	3、协助解决技术难点，提供具体解决方案；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	4、管理技术团队，监督项目进度，提升团队技术水平；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	5、参与产品与运营的方案设计，保证方案切实可行，并力求最优化结果。\r\n</p>', '<p>\r\n	1、本科以上学历，计算机及其相关专业，5年以上工作经验；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	2、熟悉Java/C/C++/Objective C/HTML5等编程语言，精通网站和移动应用（包括Android、IOS、Windows Phone和HTML5）开发技术，熟悉企业移动应用开发者优先；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	3、了解网页搜索引擎技术，熟悉大数据量网站的架构方法，具有2年以上网站开发经验以及1年以上移动应用开发经验，IOS和Android开发经验兼有者优先；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	4、具有一定的项目和技术管理能力，有技术团队管理经验者优先；\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	5、工作态度好，学习能力强，能够承担一定的工作压力，具备良好的表达和沟通能力以及团队合作精神，具有创业意愿者优先。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	6、英语水平良好，能够使用英文进行听说读写。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	7、符合条件的录用者将直接享受公司股权激励计划。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	如果您对此职位感兴趣，请将您的简历发送至jobs@sigboat.com, 并在标题上注明「技术开发总监」。\r\n</p>');
+
+-- ----------------------------
 -- Table structure for `t_login_img`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_login_img`;
@@ -2468,7 +2556,7 @@ CREATE TABLE `t_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=148 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=153 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_node
@@ -2536,6 +2624,11 @@ INSERT INTO `t_node` VALUES ('144', 'CaseCate', 'CaseCate', '案例分类管理'
 INSERT INTO `t_node` VALUES ('145', 'Tech', 'Tech', '技术天使', '0', null, '6', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('146', 'Partner', 'Partner', '合作伙伴', '0', null, '8', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('147', 'Customers', 'Customers', '我们的客户', '0', null, '7', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('148', 'Team', 'Team', '创始团队', '0', null, '9', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('149', 'Advantage', 'Advantage', '行帆优势', '0', null, '10', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('150', 'Brief', 'Brief', '公司简介和文化', '0', null, '11', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('151', 'History', 'History', '行帆历程', '0', null, '17', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('152', 'Jobs', 'Jobs', '招贤纳士', '0', null, '12', '1', '2', '0', '15');
 
 -- ----------------------------
 -- Table structure for `t_order`
@@ -2868,6 +2961,28 @@ INSERT INTO `t_store_employee` VALUES ('19', '16', '10059', '1');
 INSERT INTO `t_store_employee` VALUES ('20', '16', '10059', '2');
 INSERT INTO `t_store_employee` VALUES ('21', '17', '10077', '1');
 INSERT INTO `t_store_employee` VALUES ('22', '18', '10083', '1');
+
+-- ----------------------------
+-- Table structure for `t_team`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_team`;
+CREATE TABLE `t_team` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL DEFAULT '',
+  `sort` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `status` smallint(2) NOT NULL DEFAULT '1',
+  `logo` varchar(100) NOT NULL DEFAULT '',
+  `created` int(10) unsigned NOT NULL DEFAULT '0',
+  `duty` varchar(50) NOT NULL DEFAULT '',
+  `info` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_team
+-- ----------------------------
+INSERT INTO `t_team` VALUES ('1', '姓名', '0', '1', 'Uploads/pic/team/2014/20140916/5418399689cc7.png', '1410871633', '职务', '2006年8月，周鸿袆投资奇虎360科技有限公司，出任奇虎360董事长[16] ，此后通过免费的商业模式，产品与技术的创新，颠覆了传统互联网安全概念，改变了市场格局，迅速成长为中国最大的互联网安全服务提供商。奇虎公司旗下最主要产品之一就是360安全卫士。\r\n');
+INSERT INTO `t_team` VALUES ('2', '姓名', '0', '1', 'Uploads/pic/team/2014/20140916/5418318343d5b.png', '1410871683', '职务', '2006年8月，周鸿袆投资奇虎360科技有限公司，出任奇虎360董事长[16] ，此后通过免费的商业模式，产品与技术的创新，颠覆了传统互联网安全概念，改变了市场格局，迅速成长为中国最大的互联网安全服务提供商。奇虎公司旗下最主要产品之一就是360安全卫士。\r\n');
 
 -- ----------------------------
 -- Table structure for `t_tech`
