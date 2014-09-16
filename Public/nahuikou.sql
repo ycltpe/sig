@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_iis
-Source Server Version : 50524
+Source Server Version : 50606
 Source Host           : localhost:3306
 Source Database       : nahuikou
 
 Target Server Type    : MYSQL
-Target Server Version : 50524
+Target Server Version : 50606
 File Encoding         : 65001
 
-Date: 2014-09-16 01:38:07
+Date: 2014-09-16 17:52:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -109,7 +109,7 @@ INSERT INTO `t_admin_user` VALUES ('17', '彭帆', '277088798@qq.com', 'e10adc39
 INSERT INTO `t_admin_user` VALUES ('18', '陈志梅', 'zhimei.chen@sigboat.com', '3dd026ec0fd8578945cd49a5b4946beb', '1', '1409537555', '1409905981');
 INSERT INTO `t_admin_user` VALUES ('19', '凌斌', 'jojojo574@yahoo.com', 'e165d4f2174b66a7d1a95cb204d296eb', '1', '1409597640', '1409951565');
 INSERT INTO `t_admin_user` VALUES ('20', 'tiancaiwu', 'tiancaiwu@sina.com', '22ed349c996633dd4a972f861e18fc56', '1', '1409953457', '1409953505');
-INSERT INTO `t_admin_user` VALUES ('21', 'admin', 'admin@qq.com', '21232f297a57a5a743894a0e4a801fc3', '1', '1409597640', '1410750547');
+INSERT INTO `t_admin_user` VALUES ('21', 'admin', 'admin@qq.com', '21232f297a57a5a743894a0e4a801fc3', '1', '1409597640', '1410846915');
 
 -- ----------------------------
 -- Table structure for `t_app_version`
@@ -663,6 +663,27 @@ CREATE TABLE `t_contact` (
 -- Records of t_contact
 -- ----------------------------
 INSERT INTO `t_contact` VALUES ('1', '021-63311188', '(86 21) 63311189', 'info.sh@chubb-asia.com', '上海市黄浦区汉口路300号解放日报大厦15楼  200001', null, null, null);
+
+-- ----------------------------
+-- Table structure for `t_customers`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_customers`;
+CREATE TABLE `t_customers` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL DEFAULT '',
+  `sort` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `status` smallint(2) NOT NULL DEFAULT '1',
+  `url` varchar(100) NOT NULL DEFAULT '',
+  `logo` varchar(100) NOT NULL DEFAULT '',
+  `created` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_customers
+-- ----------------------------
+INSERT INTO `t_customers` VALUES ('1', '平安', '0', '1', 'http://www.pingan.com', 'Uploads/pic/partner/2014/20140916/541722bb2709d.png', '1410802363');
+INSERT INTO `t_customers` VALUES ('2', '3M', '0', '1', 'http://www.3M.com', 'Uploads/pic/partner/2014/20140916/541723571bc7a.png', '1410802519');
 
 -- ----------------------------
 -- Table structure for `t_exchange_rate`
@@ -2447,7 +2468,7 @@ CREATE TABLE `t_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=147 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=148 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_node
@@ -2513,7 +2534,8 @@ INSERT INTO `t_node` VALUES ('142', 'Banner', 'Banner', 'Banner设置', '0', nul
 INSERT INTO `t_node` VALUES ('143', 'Case', 'Case', '案例管理', '0', null, '4', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('144', 'CaseCate', 'CaseCate', '案例分类管理', '0', null, '5', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('145', 'Tech', 'Tech', '技术天使', '0', null, '6', '1', '2', '0', '15');
-INSERT INTO `t_node` VALUES ('146', 'Partner', 'Partner', '合作伙伴', '0', null, '7', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('146', 'Partner', 'Partner', '合作伙伴', '0', null, '8', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('147', 'Customers', 'Customers', '我们的客户', '0', null, '7', '1', '2', '0', '15');
 
 -- ----------------------------
 -- Table structure for `t_order`
