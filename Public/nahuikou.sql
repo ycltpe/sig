@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_iis
-Source Server Version : 50524
+Source Server Version : 50606
 Source Host           : localhost:3306
 Source Database       : nahuikou
 
 Target Server Type    : MYSQL
-Target Server Version : 50524
+Target Server Version : 50606
 File Encoding         : 65001
 
-Date: 2014-09-17 00:48:27
+Date: 2014-09-18 17:05:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -109,7 +109,7 @@ INSERT INTO `t_admin_user` VALUES ('17', '彭帆', '277088798@qq.com', 'e10adc39
 INSERT INTO `t_admin_user` VALUES ('18', '陈志梅', 'zhimei.chen@sigboat.com', '3dd026ec0fd8578945cd49a5b4946beb', '1', '1409537555', '1409905981');
 INSERT INTO `t_admin_user` VALUES ('19', '凌斌', 'jojojo574@yahoo.com', 'e165d4f2174b66a7d1a95cb204d296eb', '1', '1409597640', '1409951565');
 INSERT INTO `t_admin_user` VALUES ('20', 'tiancaiwu', 'tiancaiwu@sina.com', '22ed349c996633dd4a972f861e18fc56', '1', '1409953457', '1409953505');
-INSERT INTO `t_admin_user` VALUES ('21', 'admin', 'admin@qq.com', '21232f297a57a5a743894a0e4a801fc3', '1', '1409597640', '1410869489');
+INSERT INTO `t_admin_user` VALUES ('21', 'admin', 'admin@qq.com', '21232f297a57a5a743894a0e4a801fc3', '1', '1409597640', '1411007180');
 
 -- ----------------------------
 -- Table structure for `t_advantage`
@@ -2483,6 +2483,27 @@ INSERT INTO `t_history` VALUES ('3', '2010年', '0', '1', '1410881879', '成立9
 INSERT INTO `t_history` VALUES ('4', '2011年下半年', '0', '1', '1410881900', '团队获得天使投资，转入课堂外词场产品开发，截至2013年底获得超过500万用户');
 
 -- ----------------------------
+-- Table structure for `t_interactive`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_interactive`;
+CREATE TABLE `t_interactive` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL DEFAULT '',
+  `img1` varchar(100) NOT NULL DEFAULT '',
+  `des1` text,
+  `img2` varchar(100) NOT NULL DEFAULT '',
+  `des2` text,
+  `img3` varchar(100) NOT NULL DEFAULT '',
+  `des3` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_interactive
+-- ----------------------------
+INSERT INTO `t_interactive` VALUES ('1', '通过互动平台，您可以及时获取我们的最新动态和行业资讯', 'Uploads/pic/brief/2014/20140918/541a544d756c7.png', '<div id=\"u360\" class=\"u360\">\r\n	<div id=\"u360_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">关注我们的微博</span> \r\n		</p>\r\n	</div>\r\n</div>\r\n<div id=\"u361\" class=\"u361\">\r\n	<div id=\"u361_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">关注有价值的行业信息</span> \r\n		</p>\r\n	</div>\r\n</div>', 'Uploads/pic/brief/2014/20140918/541a544d78751.png', '<div id=\"u369\" class=\"u369\">\r\n	<div id=\"u369_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">扫描右方二维码关注</span> \r\n		</p>\r\n	</div>\r\n</div>\r\n<div id=\"u370\" class=\"u370\">\r\n	<div id=\"u370_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">我们的微信，关注我们</span> \r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">提供的有价值的行业信息</span> \r\n		</p>\r\n	</div>\r\n</div>', 'Uploads/pic/brief/2014/20140918/541a544d7b65f.png', '<div id=\"u434\" class=\"u434\">\r\n	<div id=\"u434_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">扫描右方二维码</span><span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">保存</span> \r\n		</p>\r\n	</div>\r\n</div>\r\n<div id=\"u435\" class=\"u435\">\r\n	<div id=\"u435_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">有相关业务即可联系我们</span> \r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\"> </span>\r\n		</p>\r\n		<div id=\"u355\" class=\"u355\">\r\n			<div id=\"u355_rtf\">\r\n				<p style=\"text-align:left;\">\r\n					<span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#000000;\">400-2525-7060</span> \r\n				</p>\r\n			</div>\r\n		</div>\r\n<br />\r\n		<p>\r\n			<br />\r\n		</p>\r\n	</div>\r\n</div>');
+
+-- ----------------------------
 -- Table structure for `t_jobs`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_jobs`;
@@ -2556,7 +2577,7 @@ CREATE TABLE `t_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=153 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=154 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_node
@@ -2629,6 +2650,7 @@ INSERT INTO `t_node` VALUES ('149', 'Advantage', 'Advantage', '行帆优势', '0
 INSERT INTO `t_node` VALUES ('150', 'Brief', 'Brief', '公司简介和文化', '0', null, '11', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('151', 'History', 'History', '行帆历程', '0', null, '17', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('152', 'Jobs', 'Jobs', '招贤纳士', '0', null, '12', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('153', 'Interactive', 'Interactive', '互动平台', '0', null, '18', '1', '2', '0', '15');
 
 -- ----------------------------
 -- Table structure for `t_order`
