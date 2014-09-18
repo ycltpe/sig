@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css">
+            <link rel="stylesheet" href="../Public/demo/css/style.css" type="text/css" media="all" />
+            <script language="javascript" type="text/javascript" src="__PUBLIC__/js/Validform/jquery-1.9.1.min.js"></script>
+            <script language="javascript" type="text/javascript" src="__PUBLIC__/js/Validform/Validform_v5.3.2.js"></script>
+            <script src="__PUBLIC__/js/admincp.js?SES" type="text/javascript"></script>
+            <script type="text/javascript">
+                $(function(){
+                    //$(".registerform").Validform();  //就这一行代码！;
+                    //$.Tipmsg.r=" ";//更改默认提示信息;
+                    $(".registerform").Validform({
+                        tiptype:3,
+                        showAllError:false
+                    });
+                })
+            </script>
+            <script type="text/javascript" src="/Public/Js/kindeditor4/kindeditor.js"></script>
+            <script type="text/javascript" src="/Public/Js/kindeditor4/lang/zh_CN.js"></script>
+            <script type="text/javascript">
+                var editor;
+                KindEditor.ready(function(K) {
+                    K.create('#des1',{
+                        uploadJson : '/Public/Js/editor/php/upload_json.php',
+                        minWidth : 750,
+                        minHeight : 260
+                    });
+                    K.create('#des2',{
+                        uploadJson : '/Public/Js/editor/php/upload_json.php',
+                        minWidth : 750,
+                        minHeight : 260
+                    });
+                    K.create('#des3',{
+                        uploadJson : '/Public/Js/editor/php/upload_json.php',
+                        minWidth : 750,
+                        minHeight : 260
+                    });
+                });
+            </script>
+            <title>拿回扣</title>
+    </head>
+    <body>
+        <form name="save" class="registerform" method="post" action="__URL__/update" enctype="multipart/form-data">
+            <table class="TableBlock" border="0" width="90%" align="center">
+                <tr>
+                    <td align="left" class="TableContent" width="15%">互动平台标题：</td>
+                    <td align="left" class="TableData">
+                        <input style="width: 350px;" class="BigInput" type="text" name="title" id="title" value="{$vo.title}" datatype="*" nullmsg="请输入互动平台标题！" errormsg="请输入互动平台标题！" /> <div style="display:inline;" class="Validform_checktip"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2" class="TableContent">行帆微博</td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%">图片：</td>
+                    <td align="left" class="TableData">
+                        <notempty name="vo.img1"><img src="__ROOT__/{$vo.img1}" style="width:120px; height: auto;"/></notempty>
+                        <input type="file" id="img1" name="img1" datatype="/^.*?\.(jpg|png|bmp)$/" ignore="ignore" nullmsg="请选择图片！" errormsg="图片格式不正确！"/>&nbsp;&nbsp;<span style="font-size: 12px;">格式仅限jpg、png、bmp</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%">描述：</td>
+                    <td align="left" class="TableData">
+                        <textarea id="des1" name="des1">{$vo.des1}</textarea> <div style="display:inline;" class="Validform_checktip"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2" class="TableContent">行帆微信</td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%">图片：</td>
+                    <td align="left" class="TableData">
+                        <notempty name="vo.img2"><img src="__ROOT__/{$vo.img2}" style="width:120px; height: auto;"/></notempty>
+                        <input type="file" id="img2" name="img2" datatype="/^.*?\.(jpg|png|bmp)$/" ignore="ignore" nullmsg="请选择图片！" errormsg="图片格式不正确！"/>&nbsp;&nbsp;<span style="font-size: 12px;">格式仅限jpg、png、bmp</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%">描述：</td>
+                    <td align="left" class="TableData">
+                        <textarea id="des2" name="des2">{$vo.des2}</textarea> <div style="display:inline;" class="Validform_checktip"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2" class="TableContent">业务合作意向</td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%">图片：</td>
+                    <td align="left" class="TableData">
+                        <notempty name="vo.img3"><img src="__ROOT__/{$vo.img3}" style="width:120px; height: auto;"/></notempty>
+                        <input type="file" id="img3" name="img3" datatype="/^.*?\.(jpg|png|bmp)$/" ignore="ignore" nullmsg="请选择图片！" errormsg="图片格式不正确！"/>&nbsp;&nbsp;<span style="font-size: 12px;">格式仅限jpg、png、bmp</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" class="TableContent" width="15%">描述：</td>
+                    <td align="left" class="TableData">
+                        <textarea id="des3" name="des3">{$vo.des3}</textarea> <div style="display:inline;" class="Validform_checktip"></div>
+                    </td>
+                </tr>
+                <tr align="center" class="TableControl">
+                    <td colspan="2" nowrap height="35">
+                        <!-- onclick="sendForm();" -->
+                        <input type="hidden" id="id" name="id" value="1"/>
+                        <input type="submit" name="Submit" value="保存信息" class="BigButton" ></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
