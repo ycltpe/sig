@@ -5,9 +5,9 @@ class ArctypeAction extends CommonAction {
 
     public function _filter(&$map) {
         if (!empty($_GET['search_name'])) {
-            $map['name'] = array('like',"%".$_GET['search_name']."%");
-        }else{
-            $map['p_id'] = $_GET['p_id'] ? $_GET['p_id'] : 0;
+            $map['name'] = array('like', "%" . $_GET['search_name'] . "%");
+        } else {
+//            $map['p_id'] = $_GET['p_id'] ? $_GET['p_id'] : 0;
         }
     }
 
@@ -45,7 +45,8 @@ class ArctypeAction extends CommonAction {
 //			{
 //				$voList = $model->where($map)->order("`" . $order . "` " . $sort)->limit($p->firstRow . ',' . $p->listRows)->findAll();
 //			}else {
-            $voList = $model->where($map)->order($order . " " . $sort)->group($group)->limit($p->firstRow . ',' . $p->listRows)->findAll();
+            $voList = $model->where($map)->order($order . " " . $sort)->group($group)->findAll();
+//            $voList = $model->where($map)->order($order . " " . $sort)->group($group)->limit($p->firstRow . ',' . $p->listRows)->findAll();
 //			}
 //            $this->_fenlei($voList);
             //分页跳转的时候保证查询条件
@@ -94,6 +95,38 @@ class ArctypeAction extends CommonAction {
         $this->assign('arr', $arr);
         $this->assign('id', $id);
         $this->edit();
+    }
+
+    public function delete() {
+        //删除指定记录
+        $name = $this->getActionName();
+        $model = M($name);
+        if (!empty($model)) {
+            $pk = $model->getPk();
+            $id = $_REQUEST [$pk];
+            if (isset($id)) {
+                if (is_array($id)) {
+                    $condition = array($pk => array('in', implode(',', $id)));
+                } else {
+                    $condition = array($pk => array('in', explode(',', $id)));
+                }
+                $list = $model->where($condition)->delete();
+                if ($list !== false) {
+                    $data = array('p_id' => 0);
+                    if (is_array($id)) {
+                        $condition = array('p_id' => array('in', implode(',', $id)));
+                    } else {
+                        $condition = array('p_id' => array('in', explode(',', $id)));
+                    }
+                    $model->where($condition)->save($data);
+                    $this->success('删除成功！');
+                } else {
+                    $this->error('删除失败！');
+                }
+            } else {
+                $this->error('非法操作');
+            }
+        }
     }
 
 }

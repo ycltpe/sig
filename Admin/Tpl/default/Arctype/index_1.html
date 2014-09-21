@@ -57,42 +57,47 @@
             <div id="content" class="ui-content fn-clear" coor="default" coor-rate="0.02">
                 <div class="ui-grid-21" coor="content">
                     <div class="ui-grid-21 ui-grid-right record-tit" coor="title">
-                        <h2 class="ui-tit-page">Banner设置</h2>
+                        <h2 class="ui-tit-page">菜单信息</h2>
                         <div class="record-tit-amount">
-                            <p>总共有 <span class="number">{$count}</span>条数据
-                            </p>
                         </div>
                     </div>
 
                     <!-- 过滤表单 -->
-                    <form method="get" action="__URL__/search" name="topSearchForm" class="ui-grid-21 ui-grid-right ui-form">
-                    <div class="ui-grid-21 ui-grid-right record-search">
-			<div id="J-advanced-filter-option" class="">
-				<div class="record-search-time fn-clear">
-					<div class="ui-form-item ui-form-item-time">
+                    <form method="get" action="__URL__/index" name="topSearchForm" class="ui-grid-21 ui-grid-right ui-form">
+                        <div class="ui-grid-21 ui-grid-right record-search">
+                            <div id="J-advanced-filter-option" class="">
+                                <div class="record-search-time fn-clear">
+                                    <div class="ui-form-item ui-form-item-time">
+                                        <label class="ui-form-label" for="J-start">菜单名称：</label>
+                                        <div class="ui-form-content">
+                                            <input type="text" value="" name="search_name" class="ui-input i-date" id="J-start">
+                                        </div>
 
-                        <div class="submit-time-container ">
-							<input type="button" value="   新增Banner" style="margin-left:970px" class="BigButtonBHover" onClick="javascript:window.location = '__URL__/add'">
-						</div>
-                    </div>
-                 </div>
-			  </div>
-			</div>
-                   <!-- .record-search -->
+                                        <div class="submit-time-container ">
+                                            <div class="submit-time ui-button ui-button-sorange">
+                                                <input type="submit" class="ui-button-text" id="J-submit-time" name="search" value="查 找"/>
+                                            </div>
+                                            <input type="button" value="新增菜单" style="margin-left:530px" class="BigButtonBHover" onClick="javascript:window.location = '__URL__/add'">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .record-search -->
 
-</form>
-<!--                    <div class="ui-grid-21 ui-grid-right fn-clear" coor="total">
-                        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-                            <tr>
-                                <td width="91%">
-                                </td>
-                                <td width="9%" align="right" style="padding-right:10px;">	<input type="button" value="新增用户" class="BigButtonBHover" onClick="javascript:window.location = '__URL__/add'"></td>
-                            </tr>
-                        </table>
+                    </form>
+                    <!--                    <div class="ui-grid-21 ui-grid-right fn-clear" coor="total">
+                                            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td width="91%">
+                                                    </td>
+                                                    <td width="9%" align="right" style="padding-right:10px;">	<input type="button" value="新增用户" class="BigButtonBHover" onClick="javascript:window.location = '__URL__/add'"></td>
+                                                </tr>
+                                            </table>
 
 
 
-                    </div>-->
+                                        </div>-->
                 </div>
 
                 <form name="update" method="post" action="__URL__/delete">
@@ -102,7 +107,7 @@
                             <div class="ui-tab-trigger">
                                 <ul class="fn-clear">
                                     <li class="ui-tab-trigger-item  ui-tab-trigger-item-current">
-                                        <a href="__URL__/index" class="ui-tab-trigger-text">Banner信息</a></li>
+                                        <a href="__URL__/index" class="ui-tab-trigger-text">菜单信息</a></li>
 
                                 </ul>
                             </div>
@@ -114,31 +119,30 @@
 
                                         <thead>
                                             <tr>
-                                                <th class="checkbox">
+                                                <th class="checkbox" width="20">
                                                     <input type="checkbox" class="checkbox" value="1" name="chkall" onClick="check_all(this)" /></th>
-                                                <th width="50">编号</th>
-                                                <th width="300">标题</th>
-                                                <th width="260">小标题</th>
-                                                <th> </th>
-                                                <th width="70">状态</th>
-                                                <th width="70">操作</th>
+                                                <th width="100"><a href="__URL__/index?_sort={$sort}">菜单编号</a></th>
+                                                <th width="200">菜单名称</th>
+                                                <th>&nbsp;</th>
+                                                <th width="300">操作</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-
                                         <foreach item='vs' name='list'>
                                             <tr >
                                                 <td class="checkbox">
-                                                    <input type="checkbox" name="id[]" value="{$vs.id}" class="checkbox" /></td>
+                                                    <input type="checkbox" name="id[]" value="{$vs.id}" class="checkbox" />
                                                 </td>
-                                                <th>{$vs.id}</th>
-                                                <th>{$vs.title}</th>
-                                                <th>{$vs.lit_title}</th>
-                                                <th></th>
-                                                <td >{$vs.status|getstatus1}</td>
-                                                <td ><a href="__URL__/edit/id/{$vs.id}">编辑</a></td>
+                                                <td >{$vs.id}</td>
+                                                <td ><a href="__URL__/index?p_id={$vs.id}">{$vs.name}</a></td>
+                                                <td >&nbsp;</td>
+                                                <td ><a href="__URL__/add/p_id/{$vs.id}">添加子菜单</a> |
+                                                    <a href="__URL__/edit/id/{$vs.id}">编辑</a> |
+                                                    <a href="__URL__/editclass/id/{$vs.id}">移动</a> |
+                                                    <a href="__URL__/delete/id/{$vs.id}">删除</a></td>
                                             </tr>
                                         </foreach>
+
                                         </tbody>
                                     </table>
 
@@ -148,11 +152,6 @@
                                     <!-- 图释 -->
                                     <div class="iconTip fn-left" style="padding-left:15px;">
                                         <input type="checkbox" class="checkbox" value="1" name="chkall" onClick="check_all(this)" /> 全选
-
-                                        &nbsp;
-                                        <a class="js-add-contact"><span></span></a>
-                                        <a href="javascript:document:update.submit();">删除数据</a>
-
                                     </div>
 
                                     <div class="page page-nobg fn-right">
@@ -183,9 +182,9 @@
                 $.get('__URL__/GetCustomer', {companyid: $(this).val()}, function($data) {
                     $('.orderid').html($data);
                 }
-                );
-            }
             );
+            }
+        );
         </script>
     </body>
 </html>

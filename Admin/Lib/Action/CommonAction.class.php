@@ -1,7 +1,7 @@
 <?php
 
 class CommonAction extends Action {
-	
+
     function _initialize() {
         // 用户权限检查
         if (C('USER_AUTH_ON') && !in_array(MODULE_NAME, explode(',', C('NOT_AUTH_MODULE')))) {
@@ -242,8 +242,11 @@ class CommonAction extends Action {
             $pk = $model->getPk();
             $id = $_REQUEST [$pk];
             if (isset($id)) {
-//                $condition = array($pk => array('in', explode(',', $id)));
-                $condition = array($pk => array('in', implode(',', $id)));
+                if(is_array($id)){
+                    $condition = array($pk => array('in', implode(',', $id)));
+                }else{
+                    $condition = array($pk => array('in', explode(',', $id)));
+                }
                 $list = $model->where($condition)->delete();
                 if ($list !== false) {
                     $this->success('删除成功！');
@@ -415,19 +418,19 @@ class CommonAction extends Action {
             }
         }
     }
-    
-    /* 
-	 * 功能：循环检测并创建文件夹 
-	 * 参数：$path 文件夹路径 
-	 * 返回： 
-	 */ 
+
+    /*
+	 * 功能：循环检测并创建文件夹
+	 * 参数：$path 文件夹路径
+	 * 返回：
+	 */
 	function createDir($path){
-		if (!file_exists($path)){ 
-			$this->createDir(dirname($path)); 
-			mkdir($path, 0777); 
+		if (!file_exists($path)){
+			$this->createDir(dirname($path));
+			mkdir($path, 0777);
 		}
 	}
-    
+
     function upload_pic($file,$type, $path,$thumb = false, $water = false, $thumbPrefix = 's_', $thumbMaxWidth = '125', $thumbMaxHeight = '125') {
 		import("ORG.Net.UploadFile");
 		$upload = new UploadFile();
@@ -443,7 +446,7 @@ class CommonAction extends Action {
 			$upload->savePath = $save_dir.'/';
 	        //设置上传文件规则
 	        $upload->saveRule = uniqid;
-	        
+
 	        //设置需要生成缩略图，仅对图像文件有效
 	        $upload->thumb = $thumb;
 	        // 设置引用图片类库包路径
@@ -457,7 +460,7 @@ class CommonAction extends Action {
 	        $upload->thumbMaxHeight = $thumbMaxHeight;
 	        //$upload->thumbMaxHeight = '414,311';
 	        //设置上传文件规则
-	        $upload->saveRule = uniqid;      
+	        $upload->saveRule = uniqid;
 	        $upload->thumbRemoveOrigin = false; //不删除原图
 	        $info =  $upload->uploadOne($file);
 	        if ($info) {
@@ -467,15 +470,15 @@ class CommonAction extends Action {
 	            //捕获上传异常
 	            $this->error($upload->getErrorMsg());
 	        }
-	    } 
+	    }
         //返回数据对象
         return $uploadInfo;
     }
-    
+
     /**
 	 * @param $user_id 用户标识
 	 * @param $pType   推送类型：
-	 * 	推送消息到某个user，设置push_type = 1; 
+	 * 	推送消息到某个user，设置push_type = 1;
 	 *  推送消息到一个tag中的全部user，设置push_type = 2;
 	 *  推送消息到该app中的全部user，设置push_type = 3;
 	 * @param $message   指定消息内容
@@ -527,11 +530,11 @@ class CommonAction extends Action {
 	        return true;
 	    }
 	}
-	
+
 	/**
 	 * @param $user_id 用户标识
 	 * @param $pType   推送类型：
-	 * 	推送消息到某个user，设置push_type = 1; 
+	 * 	推送消息到某个user，设置push_type = 1;
 	 *  推送消息到一个tag中的全部user，设置push_type = 2;
 	 *  推送消息到该app中的全部user，设置push_type = 3;
 	 * @param $message   指定消息内容
@@ -583,7 +586,7 @@ class CommonAction extends Action {
 	        return true;
 	    }
 	}
-	
+
 	function guid(){
 	    if (function_exists('com_create_guid')){
 	        return com_create_guid();
@@ -601,7 +604,7 @@ class CommonAction extends Action {
 	        return $uuid;
 	    }
 	}
-	
+
 	public function push($user_id,$dType,$title,$description,$type=0,$userType)
     {
     	header("Content-Type:text/html; charset=utf-8");
@@ -634,13 +637,13 @@ class CommonAction extends Action {
  		}
     	return $res;
     }
-    
+
     /**
       * 导出数据为excel表格
       * @param $data    一个二维数组,结构如同从数据库查出来的数组
       * @param $title   excel的第一行标题,一个数组,如果为空则没有标题
       * @param $filename 下载的文件名
-      * @examlpe 
+      * @examlpe
       * $stu = M ('User');
       * $arr = $stu -> select();
       * exportexcel($arr,array('id','账户','密码','昵称'),'文件名!');
@@ -648,7 +651,7 @@ class CommonAction extends Action {
 	function exportexcel($data=array(),$title=array(),$filename='report'){
 	    header("Content-type:application/octet-stream");
 	    header("Accept-Ranges:bytes");
-	    header("Content-type:application/vnd.ms-excel");  
+	    header("Content-type:application/vnd.ms-excel");
 	    header("Content-Disposition:attachment;filename=".$filename.".xls");
 	    header("Pragma: no-cache");
 	    header("Expires: 0");
@@ -666,12 +669,12 @@ class CommonAction extends Action {
 	                $data[$key][$ck]=iconv("UTF-8", "GB2312", $cv);
 	            }
 	            $data[$key]=implode("\t", $data[$key]);
-	            
+
 	        }
 	        echo implode("\n",$data);
 	    }
 	}
-	
+
 	/**
 	 * 以下为自己增加
 	 */
@@ -687,7 +690,7 @@ class CommonAction extends Action {
 			$name = str_replace("{","",$name);
 			return $name;
      }
-      
+
       /**
 	   * 创建文件夹
 	   * @param String $dirName 文件夹路径名
@@ -695,7 +698,7 @@ class CommonAction extends Action {
 	  public function create_dir($dirName, $recursive = 1,$mode=0777) {
 			! is_dir ( $dirName ) && mkdir ( $dirName,$mode,$recursive );
 	  }
-	  
+
 	  /**
 	   * 二进制流转图片
 	   * @param string $file_data 二进制流字符串
@@ -710,7 +713,7 @@ class CommonAction extends Action {
 //		$save_path=$save_dir."/".$save_name;
 //		$base64 = base64_decode($file_data);
 //		file_put_contents($save_path,$base64);
-//		
+//
 //		return $save_path;
 //	  }
 	  function stream2Image($file_data,$type=".png")

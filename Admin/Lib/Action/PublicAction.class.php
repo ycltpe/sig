@@ -49,7 +49,7 @@ class PublicAction extends CommonAction {
 		}else{
 			$map['group_id']=$_GET['menuid'];
 		}
-        $tagname=M("Node")->where($map)->select();
+        $tagname=M("Node")->where($map)->order('sort')->select();
         $this->assign('tagname', $tagname);
         $this->display();
     }

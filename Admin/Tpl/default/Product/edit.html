@@ -21,7 +21,7 @@
             <script type="text/javascript">
                 var editor;
                 KindEditor.ready(function(K) {
-                    K.create('#content',{
+                    K.create('#description',{
                         uploadJson : '/Public/Js/editor/php/upload_json.php',
                         minWidth : 750,
                         minHeight : 260
@@ -33,54 +33,51 @@
     <body>
         <table width="90%" border="0" align="center" cellpadding="3" cellspacing="0" class="small">
             <tr>
-                <td align="left" class="Big"><img src="__PUBLIC__/images/notify_new.gif" align="absmiddle"><span class="big3"> 新增菜单信息</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span style="font-size:12px;"><a href="__URL__" style="font-size:12px;">返回菜单列表</a><img src="__PUBLIC__/images/f_ico.png" align="absmiddle"></span>
+                <td align="left" class="Big"><img src="__PUBLIC__/images/notify_new.gif" align="absmiddle"><span class="big3"> 新增产品</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span style="font-size:12px;"><a href="__URL__" style="font-size:12px;">返回产品列表</a><img src="__PUBLIC__/images/f_ico.png" align="absmiddle"></span>
                 </td>
             </tr>
         </table>
         <form name="save" class="registerform" method="post" action="__URL__/update" enctype="multipart/form-data">
             <table class="TableBlock" border="0" width="90%" align="center">
                 <tr>
-                    <td align="left" class="TableContent" width="15%"> 菜单名称：</td>
+                    <td align="left" class="TableContent" width="15%">标题：</td>
                     <td align="left" class="TableData">
-                        <input type="text" class="BigInput" id="name" name="name" value="{$vo.name}" datatype="*" nullmsg="请输入菜单名称！" errormsg="请输入菜单名称！" > <div style="display:inline;" class="Validform_checktip"></div>
+                        <input style="width: 200px;" type="text" class="BigInput" id="title" name="title" datatype="*" value="{$vo.title}" nullmsg="请输入标题名称！" errormsg="请输入标题名称！"/> <div style="display:inline;" class="Validform_checktip"></div>
                     </td>
                 </tr>
                 <tr>
-                    <td align="left" class="TableContent" width="15%"> 菜单属性：</td>
+                    <td align="left" class="TableContent" width="15%">产品分类：</td>
                     <td align="left" class="TableData">
-                        <SELECT name="channeltype" datatype="*" nullmsg="请选择菜单属性！">
-                            <option value="">请选择菜单属性</option>
-                            <option <eq name="vo.channeltype" value="1">selected</eq> value="1">最终列表菜单</option>
-                            <option <eq name="vo.channeltype" value="2">selected</eq> value="2">频道封面</option>
-                            <option <eq name="vo.channeltype" value="3">selected</eq> value="3">外部连接</option>
+                        <SELECT name="case_cate_id" datatype="*" nullmsg="请选择产品分类！">
+                            <option value="">请选择产品分类</option>
+                            <volist name="list" id="v">
+                                <option <eq name="vo.case_cate_id" value="$v['id']">selected</eq> value="{$v.id}">{$v.catename}</option>
+                            </volist>
                         </SELECT> <div style="display:inline;" class="Validform_checktip"></div>
                     </td>
                 </tr>
                 <tr>
-                    <td align="left" class="TableContent" width="15%"> 菜单显示位置：</td>
+                    <td align="left" class="TableContent" width="15%">缩略图：</td>
                     <td align="left" class="TableData">
-                        <SELECT name="position" datatype="*" nullmsg="请选择显示位置！">
-                            <option <eq name="vo.position" value="0">selected</eq> value="0">默认显示</option>
-                            <option <eq name="vo.position" value="1">selected</eq> value="1">不显示</option>
-                            <option <eq name="vo.position" value="2">selected</eq> value="2">底部导航显示</option>
-                        </SELECT> <div style="display:inline;" class="Validform_checktip"></div>
+                        <notempty name="vo.thumb"><img src="__ROOT__/{$vo.thumb}" style="width:120px; height: auto;"/></notempty>
+                        <input type="file" id="thumb" name="thumb" datatype="/^.*?\.(jpg|png|bmp)$/" ignore="ignore" nullmsg="请选择图片！" errormsg="图片格式不正确！"/>&nbsp;&nbsp;<span style="font-size: 12px;">格式仅限jpg、png、bmp</span>
                     </td>
                 </tr>
                 <tr>
                     <td align="left" class="TableContent" width="15%">描述：</td>
                     <td align="left" class="TableData">
-                        <textarea id="content" name="content">{$vo.content}</textarea>
+                        <textarea id="description" name="description">{$vo.description}</textarea>
                     </td>
                 </tr>
                 <tr>
                     <td align="left" class="TableContent" width="15%"> 排序：</td>
                     <td align="left" class="TableData">
-                        <input type="text" class="BigInput" id="sortrank" name="sortrank" value="{$vo.sortrank}" >
+                        <input type="text" class="BigInput" id="sort" name="sort" value="{$vo.sort}" >
                     </td>
                 </tr>
                 <tr>
-                    <td align="left" class="TableContent" width="15%"> 状态：</td>
+                    <td align="left" class="TableContent" width="15%">状态：</td>
                     <td align="left" class="TableData">
                         <SELECT name="status">
                             <option <eq name="vo.status" value="1">selected</eq> value="1">显示</option>
@@ -91,10 +88,10 @@
                 <tr align="center" class="TableControl">
                     <td colspan="2" nowrap height="35">
                         <!-- onclick="sendForm();" -->
-                        <input type="hidden" class="medium bLeft" name="id" value="{$vo.id}">
-                            <input type="submit" name="Submit" value="保存信息" class="BigButton" >      </td>
-                                </tr>
-                                </table>
-                                </form>
-                                </body>
-                                </html>
+                        <input type="hidden" id="id" name="id" value="{$vo.id}"/>
+                        <input type="submit" name="Submit" value="保存信息" class="BigButton" ></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

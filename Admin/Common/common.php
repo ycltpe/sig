@@ -15,26 +15,48 @@
 function optionFenlei($arr, $p_id = 0) {
     for ($i = 0; $i < count($arr); $i++) {
         if ($arr[$i]['p_id'] == $p_id) {
-            echo '<option value="'.$arr[$i]['id'].'">' . $arr[$i]['name'] . '</option>';
+            echo '<option value="' . $arr[$i]['id'] . '">' . $arr[$i]['name'] . '</option>';
             optionFenlei($arr, $arr[$i]['id']);
         }
     }
 }
 
 function fenlei($arr, $p_id = 0) {
-    $style = '';
     for ($i = 0; $i < count($arr); $i++) {
         if ($arr[$i]['p_id'] == $p_id) {
+            $style = '';
+            $addchild = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+            if ($p_id == 0) {
+                $addchild = '<a href="' . __URL__ . '/add/p_id/' . $arr[$i]['id'] . '">添加子菜单</a> |';
+            } else {
+                $style = ' style="text-indent:2em;"';
+            }
             echo '<tr><td class="checkbox"><input type="checkbox" name="id[]" value="' . $arr[$i]['id'] . '" class="checkbox" /></td>
                       <td' . $style . '>' . $arr[$i]['id'] . '</td><td' . $style . '>' . $arr[$i]['name'] . '</td><td>&nbsp;</td>
-                      <td><a href="' . __URL__ . '/add/p_id/' . $arr[$i]['id'] . '">添加子菜单</a> |
+                      <td>' . getStatus1($arr[$i]['status']) . '</td>
+                      <td>' . $addchild . '
                          <a href="' . __URL__ . '/edit/id/' . $arr[$i]['id'] . '">编辑</a> |
+                         <a href="' . __URL__ . '/editclass/id/' . $arr[$i]['id'] . '">移动</a> |
                          <a href="' . __URL__ . '/delete/id/' . $arr[$i]['id'] . '">删除</a></td></tr>';
             fenlei($arr, $arr[$i]['id']);
-        } else {
-            $style = ' style="text-indent:2em;"';
         }
     }
+}
+
+function getProductCate($id){
+    return M('ProductCate')->where('id = ' . $id . ' and status = 1')->getField('catename');
+}
+
+function getStatus1($id) {
+    switch ($id) {
+        case 1 :
+            $show = '<img src="/Public/images/right.gif" />';
+            break;
+        case 0 :
+            $show = '<img src="/Public/images/error.gif" />';
+            break;
+    }
+    return $show;
 }
 
 function toDate($time, $format = 'Y-m-d H:i:s') {

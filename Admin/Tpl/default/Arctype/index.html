@@ -124,25 +124,12 @@
                                                 <th width="100"><a href="__URL__/index?_sort={$sort}">菜单编号</a></th>
                                                 <th width="200">菜单名称</th>
                                                 <th>&nbsp;</th>
+                                                <th width="100">状态</th>
                                                 <th width="300">操作</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <foreach item='vs' name='list'>
-                                            <tr >
-                                                <td class="checkbox">
-                                                    <input type="checkbox" name="id[]" value="{$vs.id}" class="checkbox" />
-                                                </td>
-                                                <td >{$vs.id}</td>
-                                                <td ><a href="__URL__/index?p_id={$vs.id}">{$vs.name}</a></td>
-                                                <td >&nbsp;</td>
-                                                <td ><a href="__URL__/add/p_id/{$vs.id}">添加子菜单</a> |
-                                                    <a href="__URL__/edit/id/{$vs.id}">编辑</a> |
-                                                    <a href="__URL__/editclass/id/{$vs.id}">移动</a> |
-                                                    <a href="__URL__/delete/id/{$vs.id}">删除</a></td>
-                                            </tr>
-                                        </foreach>
-
+                                            <?php fenlei($list); ?>
                                         </tbody>
                                     </table>
 
@@ -153,9 +140,13 @@
                                     <div class="iconTip fn-left" style="padding-left:15px;">
                                         <input type="checkbox" class="checkbox" value="1" name="chkall" onClick="check_all(this)" /> 全选
                                     </div>
+                                    <div class="iconTip fn-left" style="padding-left:15px;">
+                                        <a class="js-add-contact"><span></span></a>
+                                        <a href="javascript:document:update.submit();">删除数据</a>
+                                    </div>
 
                                     <div class="page page-nobg fn-right">
-                                        <span class="page-link">{$page}</span>
+                                        <span class="page-link"></span>
                                     </div>
                                     <!-- /分页 -->
                                 </div>
