@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_iis
-Source Server Version : 50606
+Source Server Version : 50524
 Source Host           : localhost:3306
 Source Database       : nahuikou
 
 Target Server Type    : MYSQL
-Target Server Version : 50606
+Target Server Version : 50524
 File Encoding         : 65001
 
-Date: 2014-09-18 17:05:42
+Date: 2014-09-21 23:31:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -99,17 +99,7 @@ CREATE TABLE `t_admin_user` (
 -- ----------------------------
 -- Records of t_admin_user
 -- ----------------------------
-INSERT INTO `t_admin_user` VALUES ('2', '付文波', '1181958400@qq.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '1402640859', '1409931009');
-INSERT INTO `t_admin_user` VALUES ('14', 'ganbing', 'bing.gan', '827ccb0eea8a706c4c34a16891f84e7b', '1', '1406276295', '1406276295');
-INSERT INTO `t_admin_user` VALUES ('12', '赖财旺', 'caiwang.lai@sigboat.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '1406182567', '1407115159');
-INSERT INTO `t_admin_user` VALUES ('9', '胡美乐', '1124791554@qq.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '1406181436', '1409906203');
-INSERT INTO `t_admin_user` VALUES ('15', '张正国', 'zhengguo.zhang@sigboat.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '1406600268', '1409385391');
-INSERT INTO `t_admin_user` VALUES ('16', '丁百计', 'baiji.ding@sigboat.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '1406774171', '1409907227');
-INSERT INTO `t_admin_user` VALUES ('17', '彭帆', '277088798@qq.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '1408348817', '1409932349');
-INSERT INTO `t_admin_user` VALUES ('18', '陈志梅', 'zhimei.chen@sigboat.com', '3dd026ec0fd8578945cd49a5b4946beb', '1', '1409537555', '1409905981');
-INSERT INTO `t_admin_user` VALUES ('19', '凌斌', 'jojojo574@yahoo.com', 'e165d4f2174b66a7d1a95cb204d296eb', '1', '1409597640', '1409951565');
-INSERT INTO `t_admin_user` VALUES ('20', 'tiancaiwu', 'tiancaiwu@sina.com', '22ed349c996633dd4a972f861e18fc56', '1', '1409953457', '1409953505');
-INSERT INTO `t_admin_user` VALUES ('21', 'admin', 'admin@qq.com', '21232f297a57a5a743894a0e4a801fc3', '1', '1409597640', '1411007180');
+INSERT INTO `t_admin_user` VALUES ('21', 'admin', 'admin@qq.com', '21232f297a57a5a743894a0e4a801fc3', '1', '1409597640', '1411293531');
 
 -- ----------------------------
 -- Table structure for `t_advantage`
@@ -170,58 +160,40 @@ CREATE TABLE `t_arctype` (
   `name` varchar(20) NOT NULL DEFAULT '',
   `position` smallint(5) unsigned NOT NULL DEFAULT '0',
   `channeltype` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `content` text NOT NULL,
   `sortrank` smallint(5) unsigned NOT NULL DEFAULT '0',
   `status` smallint(2) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_arctype
 -- ----------------------------
-INSERT INTO `t_arctype` VALUES ('1', '0', '产品与方案', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('2', '0', '服务内容', '0', '1', '0', '1');
-INSERT INTO `t_arctype` VALUES ('3', '0', '典型案例', '0', '1', '0', '1');
-INSERT INTO `t_arctype` VALUES ('4', '0', '技术天使', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('5', '0', '客户与伙伴', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('6', '0', '关于行帆', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('7', '0', '联系我们', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('8', '1', '移动产品', '0', '1', '0', '1');
-INSERT INTO `t_arctype` VALUES ('9', '1', '解决方案', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('10', '1', '微信平台', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('11', '2', '移动战略咨询', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('12', '2', '移动产品设计', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('13', '2', '开发与测试', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('14', '2', '运营与推广', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('15', '2', '维护与升级', '0', '1', '0', '1');
-INSERT INTO `t_arctype` VALUES ('16', '3', '经典案例', '0', '1', '0', '1');
-INSERT INTO `t_arctype` VALUES ('17', '3', '500强案例', '0', '1', '0', '1');
-INSERT INTO `t_arctype` VALUES ('18', '6', '创始人介绍', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('19', '6', '股东介绍', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('20', '6', '公司简介', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('21', '6', '行帆历程', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('22', '6', '行帆文化', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('23', '7', 'aaa', '0', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('24', '11', '企业移动化咨询', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('25', '11', '消费者移动产品咨询', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('26', '12', '产品UI原型图制作', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('27', '12', 'GUI效果图制作', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('28', '12', '用户体验测试与该机', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('29', '13', '安卓（Android）开发', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('30', '13', '苹果（IOS）开发', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('31', '13', '微信公众号开发', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('32', '13', '移动网站开发', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('33', '13', '网站开发', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('34', '14', '产品运营', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('35', '14', 'APP Store运营', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('36', '13', '企业系统开发', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('37', '13', '后台系统与接口开发', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('38', '13', 'Q&A测试', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('39', '14', '运营监控', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('40', '14', '市场营销', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('41', '14', '推广活动策划', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('42', '14', '合作推广', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('43', '15', 'BUG维修', '1', '2', '0', '1');
-INSERT INTO `t_arctype` VALUES ('44', '15', '迭代开发', '1', '2', '0', '1');
+INSERT INTO `t_arctype` VALUES ('1', '0', '产品与方案', '0', '2', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('2', '0', '服务内容', '0', '1', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('3', '0', '典型案例', '0', '1', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('4', '0', '技术天使', '0', '2', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('5', '0', '客户与伙伴', '0', '2', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('6', '0', '关于行帆', '0', '2', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('7', '0', '联系我们', '0', '2', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('8', '1', '移动产品', '0', '1', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('9', '1', '解决方案', '0', '2', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('10', '1', '微信平台', '0', '2', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('11', '2', '移动战略咨询', '0', '2', '<div id=\"u1904\" class=\"u1904\">\r\n	<div id=\"u1904_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">移动APP定制开发是行帆科技核心业务之一，汇聚了公司主要的研发力量，团队成员由三星、HTC、腾讯及金蝶等国内外顶尖高科技公司资深工程师组成，拥有国际专业背景和资深从业经验。</span>\r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp;</span>\r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">行\r\n帆科技为客户提供专业的APP软件项目定制开发服务，涵盖IOS、Android、Windows \r\nPhone、Html5等主流平台，已经为客户成功开发了移动销售、移动教育、移动金融理财、移动展示、运营商业务、无线消费电子、移动办公、移动执法、\r\n移动电子商务、移动医疗、制造业移动信息化等移动平台软件产品。</span>\r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp;</span>\r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">通过多年的经验积累，行帆科技已经形成了一套成熟的软件项目开发流程和质量保证体系，完全符合ISO9001质量体系。</span>\r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp;</span>\r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">行帆科技热衷于移动互联网应用的开发，帮助我们的伙伴创造移动互联网新价值。</span>\r\n		</p>\r\n	</div>\r\n</div>', '0', '1');
+INSERT INTO `t_arctype` VALUES ('12', '2', '移动产品设计', '0', '2', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('13', '2', '开发与测试', '0', '2', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('14', '2', '运营与推广', '0', '2', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('15', '2', '维护与升级', '0', '1', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('16', '3', '经典案例', '0', '1', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('17', '3', '500强案例', '0', '1', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('18', '6', '创始人介绍', '0', '2', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('19', '6', '股东介绍', '0', '2', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('20', '6', '公司简介', '0', '2', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('21', '6', '行帆历程', '0', '2', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('22', '6', '行帆文化', '0', '2', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('45', '0', '新闻与动态', '1', '2', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('46', '45', '行业新闻', '1', '1', '', '0', '1');
+INSERT INTO `t_arctype` VALUES ('47', '45', '行帆动态', '1', '1', '', '0', '1');
 
 -- ----------------------------
 -- Table structure for `t_bank`
@@ -705,6 +677,30 @@ CREATE TABLE `t_contact` (
 -- Records of t_contact
 -- ----------------------------
 INSERT INTO `t_contact` VALUES ('1', '021-63311188', '(86 21) 63311189', 'info.sh@chubb-asia.com', '上海市黄浦区汉口路300号解放日报大厦15楼  200001', null, null, null);
+
+-- ----------------------------
+-- Table structure for `t_contactus`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_contactus`;
+CREATE TABLE `t_contactus` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) NOT NULL DEFAULT '',
+  `lit_title` varchar(50) NOT NULL,
+  `img1` varchar(100) NOT NULL,
+  `desc` text NOT NULL,
+  `sort` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `status` smallint(2) NOT NULL DEFAULT '1',
+  `created` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_contactus
+-- ----------------------------
+INSERT INTO `t_contactus` VALUES ('1', '上海行帆科技', '我们的电话与办公地点随时为您开放，欢迎致电！', 'Uploads/pic/brief/2014/20140921/541e44edb2291.png', '<div id=\"u375\" class=\"u375\">\r\n	<div id=\"u375_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">电话：021-2525-7060 / 135-6486-5906</span> \r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\"> </span> \r\n		</p>\r\n		<div id=\"u377\" class=\"u377\">\r\n			<div id=\"u377_rtf\">\r\n				<p style=\"text-align:left;\">\r\n					<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">地址：<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\"><span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">上海市杨浦区江浦路988号尚凯商务大厦2楼</span></span></span> \r\n				</p>\r\n			</div>\r\n		</div>\r\n		<div id=\"u380\" class=\"u380\">\r\n			<div id=\"u380_rtf\">\r\n				<p style=\"text-align:left;\">\r\n					<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">邮箱：weilong.liu@sigboat.com</span> \r\n				</p>\r\n			</div>\r\n		</div>\r\n		<div id=\"u379\" class=\"u379\">\r\n			<div id=\"u379_rtf\">\r\n				<p style=\"text-align:left;\">\r\n					<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">联系人：刘先生</span> \r\n				</p>\r\n			</div>\r\n		</div>\r\n		<div id=\"u378\" class=\"u378\">\r\n			<div id=\"u378_rtf\">\r\n				<p style=\"text-align:left;\">\r\n					<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">QQ：</span> \r\n				</p>\r\n			</div>\r\n		</div>\r\n		<iframe src=\"http://localhost:9001/Public/Js/kindeditor4/plugins/baidumap/index.html?center=121.529029%2C31.272866&zoom=19&width=558&height=360&markers=121.529029%2C31.272866&markerStyles=l%2CA\" style=\"width:560px;height:362px;\" frameborder=\"0\">\r\n		</iframe>\r\n<br />\r\n		<p>\r\n			<br />\r\n		</p>\r\n	</div>\r\n</div>', '0', '1', '1411269869');
+INSERT INTO `t_contactus` VALUES ('2', '北京行帆科技', '我们的电话与办公地点随时为您开放，欢迎致电！', 'Uploads/pic/brief/2014/20140921/541e4773e72a6.png', '<div id=\"u390\" class=\"u390\">\r\n	<div id=\"u390_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">电话：010-6471-7123/130-0100-0017 </span>\r\n		</p>\r\n	</div>\r\n</div>\r\n<div id=\"u392\" class=\"u392\">\r\n	<div id=\"u392_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">地址：北京朝阳区广顺北大街星源国际B座13A07</span>\r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">\r\n			<div id=\"u395\" class=\"u395\">\r\n				<div id=\"u395_rtf\">\r\n					<p style=\"text-align:left;\">\r\n						<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">邮箱：yiming.fan@sigboat.com</span>\r\n					</p>\r\n				</div>\r\n			</div>\r\n</span>\r\n		</p>\r\n	</div>\r\n</div>\r\n<div id=\"u394\" class=\"u394\">\r\n	<div id=\"u394_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">联系人：范先生</span>\r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\"><span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">QQ：</span></span>\r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\"><span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">\r\n			<iframe src=\"http://localhost:9001/Public/Js/kindeditor4/plugins/baidumap/index.html?center=116.475594%2C40.007949&zoom=19&width=558&height=360&markers=116.475594%2C40.007949&markerStyles=l%2CA\" style=\"width:560px;height:362px;\" frameborder=\"0\">\r\n			</iframe>\r\n</span><br />\r\n</span>\r\n		</p>\r\n	</div>\r\n</div>', '0', '1', '1411270515');
+INSERT INTO `t_contactus` VALUES ('3', '天津行帆科技', '我们的电话与办公地点随时为您开放，欢迎致电！', 'Uploads/pic/brief/2014/20140921/541e47db23276.png', '<div id=\"u405\" class=\"u405\">\r\n	<div id=\"u405_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">电话：022-8738-5880 / 135-0200-0380</span>\r\n		</p>\r\n	</div>\r\n</div>\r\n<div id=\"u407\" class=\"u407\">\r\n	<div id=\"u407_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">地址：天津市南开区长江道南丰路口宝利国际广场2座25楼 <br />\r\n</span>\r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">\r\n			<div id=\"u410\" class=\"u410\">\r\n				<div id=\"u410_rtf\">\r\n					<p style=\"text-align:left;\">\r\n						<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">邮箱：shixiong.yin@sigboat.com</span>\r\n					</p>\r\n				</div>\r\n			</div>\r\n</span>\r\n		</p>\r\n	</div>\r\n</div>\r\n<div id=\"u409\" class=\"u409\">\r\n	<div id=\"u409_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">联系人：尹先生</span>\r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\"><span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">QQ：</span></span>\r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\"><span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">\r\n			<iframe src=\"http://localhost:9001/Public/Js/kindeditor4/plugins/baidumap/index.html?center=117.174243%2C39.132294&zoom=19&width=558&height=360&markers=117.174243%2C39.132294&markerStyles=l%2CA\" style=\"width:560px;height:362px;\" frameborder=\"0\">\r\n			</iframe>\r\n</span><br />\r\n</span>\r\n		</p>\r\n	</div>\r\n</div>', '0', '1', '1411270619');
+INSERT INTO `t_contactus` VALUES ('4', '成都行帆科技', '我们的电话与办公地点随时为您开放，欢迎致电！', 'Uploads/pic/brief/2014/20140921/541e48270858f.png', '<div id=\"u420\" class=\"u420\">\r\n	<div id=\"u420_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">电话：136-8197-6581</span>\r\n		</p>\r\n	</div>\r\n</div>\r\n<div id=\"u422\" class=\"u422\">\r\n	<div id=\"u422_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">地址：成都市武侯区西部智谷D区43栋</span>\r\n		</p>\r\n	</div>\r\n</div>\r\n<div id=\"u423\" class=\"u423\">\r\n	<div id=\"u423_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">\r\n			<div id=\"u425\" class=\"u425\">\r\n				<div id=\"u425_rtf\">\r\n					<p style=\"text-align:left;\">\r\n						<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">邮箱：hua.yang@sigboat.com</span>\r\n					</p>\r\n				</div>\r\n			</div>\r\n</span>\r\n		</p>\r\n	</div>\r\n</div>\r\n<div id=\"u424\" class=\"u424\">\r\n	<div id=\"u424_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">联系人：杨先生</span>\r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\"><span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">QQ：</span></span>\r\n		</p>\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\"><span style=\"font-family:微软雅黑;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\"></span>\r\n			<iframe src=\"http://localhost:9001/Public/Js/kindeditor4/plugins/baidumap/index.html?center=103.98439%2C30.639359&zoom=19&width=558&height=360&markers=103.98439%2C30.639359&markerStyles=l%2CA\" style=\"width:560px;height:362px;\" frameborder=\"0\">\r\n			</iframe>\r\n<br />\r\n</span>\r\n		</p>\r\n	</div>\r\n</div>', '0', '1', '1411270695');
 
 -- ----------------------------
 -- Table structure for `t_customers`
@@ -2421,18 +2417,19 @@ CREATE TABLE `t_group` (
   `sort` smallint(3) unsigned DEFAULT '0',
   `show` tinyint(1) unsigned DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=123 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_group
 -- ----------------------------
-INSERT INTO `t_group` VALUES ('2', 'Info', 'StoreManager', '讯息管理', '2013-10-08 17:35:10', null, '0', '2', '0');
-INSERT INTO `t_group` VALUES ('3', 'Setting', 'AdminUser', '设置', '2013-10-08 17:35:13', null, '0', '1', '0');
-INSERT INTO `t_group` VALUES ('4', 'Order', 'AllOrder', '订单管理', '2013-10-08 17:35:17', null, '0', '3', '0');
-INSERT INTO `t_group` VALUES ('5', 'User', 'AllUser', '用户管理', '2013-10-08 17:35:21', null, '0', '4', '0');
-INSERT INTO `t_group` VALUES ('12', 'Pay', 'ExchangeRate', '支付管理', '2014-07-21 17:32:13', '0000-00-00 00:00:00', '0', '5', '0');
+INSERT INTO `t_group` VALUES ('2', 'Info', 'StoreManager', '讯息管理', '2013-10-08 17:35:10', null, '1', '2', '0');
+INSERT INTO `t_group` VALUES ('3', 'Setting', 'AdminUser', '全局设置', '2013-10-08 17:35:13', null, '0', '1', '0');
+INSERT INTO `t_group` VALUES ('4', 'Order', 'AllOrder', '订单管理', '2013-10-08 17:35:17', null, '1', '3', '0');
+INSERT INTO `t_group` VALUES ('5', 'User', 'AllUser', '用户管理', '2013-10-08 17:35:21', null, '1', '4', '0');
+INSERT INTO `t_group` VALUES ('12', 'Pay', 'ExchangeRate', '支付管理', '2014-07-21 17:32:13', '0000-00-00 00:00:00', '1', '5', '0');
 INSERT INTO `t_group` VALUES ('14', 'UpdatePwd', 'UpdatePwd', '修改密码', null, '0000-00-00 00:00:00', '1', '0', '0');
-INSERT INTO `t_group` VALUES ('15', 'Content', 'Setting', '内容管理', '2014-09-08 13:56:06', '0000-00-00 00:00:00', '0', '6', '0');
+INSERT INTO `t_group` VALUES ('15', 'Content', 'Product', '分类管理', '2014-09-08 13:56:06', '0000-00-00 00:00:00', '0', '6', '0');
+INSERT INTO `t_group` VALUES ('16', 'Page', 'Banner', '页面管理', null, '0000-00-00 00:00:00', '0', '2', '0');
 
 -- ----------------------------
 -- Table structure for `t_help`
@@ -2577,7 +2574,7 @@ CREATE TABLE `t_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=154 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=160 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_node
@@ -2597,15 +2594,7 @@ INSERT INTO `t_node` VALUES ('7', 'User', 'User', '用户管理', '0', '', '4', 
 INSERT INTO `t_node` VALUES ('6', 'Role', 'Role', '角色管理', '1', '', '3', '1', '2', '0', '13');
 INSERT INTO `t_node` VALUES ('2', 'Node', 'Node', '节点管理', '1', '', '2', '1', '2', '0', '13');
 INSERT INTO `t_node` VALUES ('1', '', 'Public', '首页', '1', '', null, '0', '1', '0', '1');
-INSERT INTO `t_node` VALUES ('89', 'AdminUser', 'AdminUser', '后台用户管理', '0', null, '1', '1', '2', '0', '3');
-INSERT INTO `t_node` VALUES ('90', 'ClauseByCustomer', 'ClauseByCustomer', '客户注册条款', '0', null, '3', '1', '2', '0', '3');
-INSERT INTO `t_node` VALUES ('99', 'HelpForCustomer', 'HelpForCustomer', '客户帮助说明', '0', '', '4', '1', '2', '0', '3');
-INSERT INTO `t_node` VALUES ('101', 'CustomerFeedback', 'CustomerFeedback', '客户APP反馈', '0', null, '5', '1', '2', '0', '3');
 INSERT INTO `t_node` VALUES ('103', 'CustomerLOGO', 'CustomerLOGO', 'LOGO&Slogan', '1', null, '6', '1', '2', '0', '3');
-INSERT INTO `t_node` VALUES ('105', 'ClauseByBusinesses', 'ClauseByBusinesses', '商家注册条款', '0', null, '7', '1', '2', '0', '3');
-INSERT INTO `t_node` VALUES ('106', 'HelpForBusinesses', 'HelpForBusinesses', '商家帮助说明', '0', null, '8', '1', '2', '0', '3');
-INSERT INTO `t_node` VALUES ('107', 'BusinessesFeedback', 'BusinessesFeedback', '商家APP反馈', '0', null, '9', '1', '2', '0', '3');
-INSERT INTO `t_node` VALUES ('108', 'PartnerWithUs', 'PartnerWithUs', '加盟我们', '0', null, '10', '1', '2', '0', '3');
 INSERT INTO `t_node` VALUES ('109', 'BusinessesLOGO', 'BusinessesLOGO', 'LOGO&Slogan', '1', null, '11', '1', '2', '0', '3');
 INSERT INTO `t_node` VALUES ('110', 'StoreManager', 'StoreManager', '商店管理', '0', null, '1', '1', '2', '0', '2');
 INSERT INTO `t_node` VALUES ('111', 'CommodityManager', 'CommodityManager', '商品管理', '0', null, '2', '1', '2', '0', '2');
@@ -2636,21 +2625,27 @@ INSERT INTO `t_node` VALUES ('135', 'CustomersPayFor', 'CustomersPayFor', '客�
 INSERT INTO `t_node` VALUES ('136', 'PaymentRecords', 'PaymentRecords', '支付记录', '0', null, '4', '1', '2', '0', '12');
 INSERT INTO `t_node` VALUES ('137', 'BusinessmenPay', 'BusinessmenPay', '商家支付管理', '0', null, '5', '1', '2', '0', '12');
 INSERT INTO `t_node` VALUES ('138', 'UpdatePwd', 'Public/password', '修改密码', '0', null, '1', '1', '2', '0', '14');
-INSERT INTO `t_node` VALUES ('88', 'AppVersion', 'AppVersion', '版本更新', '0', null, '2', '0', '2', '0', '3');
-INSERT INTO `t_node` VALUES ('140', 'Setting', 'Setting', '站点设置', '0', null, '1', '1', '2', '0', '15');
-INSERT INTO `t_node` VALUES ('141', 'Arctype', 'Arctype', '菜单管理', '0', null, '2', '1', '2', '0', '15');
-INSERT INTO `t_node` VALUES ('142', 'Banner', 'Banner', 'Banner设置', '0', null, '3', '1', '2', '0', '15');
-INSERT INTO `t_node` VALUES ('143', 'Case', 'Case', '案例管理', '0', null, '4', '1', '2', '0', '15');
-INSERT INTO `t_node` VALUES ('144', 'CaseCate', 'CaseCate', '案例分类管理', '0', null, '5', '1', '2', '0', '15');
-INSERT INTO `t_node` VALUES ('145', 'Tech', 'Tech', '技术天使', '0', null, '6', '1', '2', '0', '15');
-INSERT INTO `t_node` VALUES ('146', 'Partner', 'Partner', '合作伙伴', '0', null, '8', '1', '2', '0', '15');
-INSERT INTO `t_node` VALUES ('147', 'Customers', 'Customers', '我们的客户', '0', null, '7', '1', '2', '0', '15');
-INSERT INTO `t_node` VALUES ('148', 'Team', 'Team', '创始团队', '0', null, '9', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('89', 'AdminUser', 'AdminUser', '后台用户管理', '0', null, '1', '1', '2', '0', '3');
+INSERT INTO `t_node` VALUES ('140', 'Setting', 'Setting', '站点设置', '0', null, '1', '1', '2', '0', '3');
+INSERT INTO `t_node` VALUES ('141', 'Arctype', 'Arctype', '菜单管理', '0', null, '2', '1', '2', '0', '3');
+INSERT INTO `t_node` VALUES ('142', 'Banner', 'Banner', 'Banner设置', '0', null, '1', '1', '2', '0', '16');
+INSERT INTO `t_node` VALUES ('143', 'Case', 'Case', '案例管理', '0', null, '5', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('144', 'CaseCate', 'CaseCate', '案例分类管理', '0', null, '6', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('145', 'Tech', 'Tech', '技术天使', '0', null, '2', '1', '2', '0', '16');
+INSERT INTO `t_node` VALUES ('146', 'Partner', 'Partner', '合作伙伴', '0', null, '7', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('147', 'Customers', 'Customers', '我们的客户', '0', null, '8', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('148', 'Team', 'Team', '创始团队', '0', null, '15', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('149', 'Advantage', 'Advantage', '行帆优势', '0', null, '10', '1', '2', '0', '15');
-INSERT INTO `t_node` VALUES ('150', 'Brief', 'Brief', '公司简介和文化', '0', null, '11', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('150', 'Brief', 'Brief', '公司简介和文化', '0', null, '4', '1', '2', '0', '16');
 INSERT INTO `t_node` VALUES ('151', 'History', 'History', '行帆历程', '0', null, '17', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('152', 'Jobs', 'Jobs', '招贤纳士', '0', null, '12', '1', '2', '0', '15');
-INSERT INTO `t_node` VALUES ('153', 'Interactive', 'Interactive', '互动平台', '0', null, '18', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('153', 'Interactive', 'Interactive', '互动平台', '0', null, '3', '1', '2', '0', '16');
+INSERT INTO `t_node` VALUES ('154', 'Contactus', 'Contactus', '联系我们', '0', null, '30', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('155', 'SchemeCate', 'SchemeCate', '方案分类管理', '0', null, '4', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('156', 'Scheme', 'Scheme', '方案管理', '0', null, '3', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('157', 'ProductCate', 'ProductCate', '产品分类管理', '0', null, '2', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('158', 'Product', 'Product', '产品管理', '0', null, '1', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('159', 'Service', 'Service', '我们的服务', '0', null, '9', '1', '2', '0', '15');
 
 -- ----------------------------
 -- Table structure for `t_order`
@@ -2734,6 +2729,48 @@ CREATE TABLE `t_partner_with_us` (
 -- Records of t_partner_with_us
 -- ----------------------------
 INSERT INTO `t_partner_with_us` VALUES ('1', '    行帆科技专注于企业移动互联网解决方案，为企业提供移动应用(APP)、手机网站和微信公众平台的产品或服务，涵盖IOS、Android、Windows Phone、HTML5、微信等主流平台。2014年6月，行帆科技已为联合利华、联合技术公司(UTC)、中国平安、宏达电(HTC)、安利等世界五百强企业开发了近百款移动互联网应用精品，并与多家知名企业建立合作伙伴关系，如三星电子、 中国电信、华为、加拿大SOTI、韩国VERTEX ID等。行帆科技已在移动教育、移动金融、移动O2O、移动办公、智能硬件等领域有大量的APP开发案例，并成为安利、上海财经大学、联合技术公司(UTC)等多家公司长期服务商。    行帆科技专注于企业移动互联网解决方案，为企业提供移动应用(APP)、手机网站和微信公众平台的产品或服务，涵盖IOS、Android、Windows Phone、HTML5、微信等主流平台。2014年6月，行帆科技已为联合利华、联合技术公司(UTC)、中国平安、宏达电(HTC)、安利等世界五百强企业开发了近百款移动互联网应用精品，并与多家知名企业建立合作伙伴关系，如三星电子、 中国电信、华为、加拿大SOTI、韩国VERTEX ID等。行帆科技已在移动教育、移动金融、移动O2O、移动办公、智能硬件等领域有大量的APP开发案例，并成为安利、上海财经大学、联合技术公司(UTC)等多家公司长期服务商。    行帆科技专注于企业移动互联网解决方案，为企业提供移动应用(APP)、手机网站和微信公众平台的产品或服务，涵盖IOS、Android、Windows Phone、HTML5、微信等主流平台。2014年6月，行帆科技已为联合利华、联合技术公司(UTC)、中国平安、宏达电(HTC)、安利等世界五百强企业开发了近百款移动互联网应用精品，并与多家知名企业建立合作伙伴关系，如三星电子、 中国电信、华为、加拿大SOTI、韩国VERTEX ID等。行帆科技已在移动教育、移动金融、移动O2O、移动办公、智能硬件等领域有大量的APP开发案例，并成为安利、上海财经大学、联合技术公司(UTC)等多家公司长期服务商。', '公司地址公司地址公司地址公司地址公司地址公司地址公司地址公司地址', '110918918@qq.com', '13671786068');
+
+-- ----------------------------
+-- Table structure for `t_product`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_product`;
+CREATE TABLE `t_product` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) NOT NULL DEFAULT '',
+  `case_cate_id` smallint(5) unsigned NOT NULL,
+  `thumb` varchar(100) NOT NULL DEFAULT '',
+  `description` text NOT NULL,
+  `created` int(11) unsigned NOT NULL DEFAULT '0',
+  `status` smallint(2) unsigned NOT NULL DEFAULT '1',
+  `sort` smallint(2) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_product
+-- ----------------------------
+INSERT INTO `t_product` VALUES ('1', '产品介绍', '1', 'Uploads/pic/product/2014/20140921/541e75224ec76.png', '<p style=\"text-align:left;\">\r\n	<span style=\"font-family:微软雅黑;font-size:28px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">课堂外词场</span>\r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<span style=\"font-family:微软雅黑;font-size:20px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp;</span>\r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<span style=\"font-family:微软雅黑;font-size:20px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp;</span>\r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<span style=\"font-family:微软雅黑;font-size:20px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp;</span>\r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">产品概述：</span>\r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp;</span>\r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp; &nbsp; &nbsp; </span><span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">课\r\n堂外词场是公司自主开发的一款免费纯净无广告、自由选择离线与在线学习的背单词软件，旨在帮助你利用地铁公交等车、茶前饭后等他、宿舍楼下等她……一切碎\r\n片时间轻松移动学习。我们为分类独立开发大学英语四级版、六级版、考研版、MBA版、雅思、托福、GRE、GMAT、SAT、TOEIC、高考英语、考研\r\n英语、考博英语、英语应用能力三级 、剑桥商务英语、职称考试英语等全系列版本。</span>\r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp;</span>\r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">功能要点：</span>\r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp; &nbsp;&nbsp; </span><span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp;</span><span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">1. 单词背诵</span>\r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp; &nbsp; &nbsp; </span><span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">2. 单词测验</span>\r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp; &nbsp; &nbsp; </span><span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">3. 闯关学习</span>\r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp; &nbsp; &nbsp; </span><span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">4</span><span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">. 每日一句</span>\r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp; &nbsp; &nbsp; </span><span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">5. 课外娱乐</span>\r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp; &nbsp; &nbsp; </span><span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">6. 学习统计</span>\r\n</p>', '1411282210', '1', '0');
+INSERT INTO `t_product` VALUES ('2', '产品特点', '1', 'Uploads/pic/product/2014/20140921/541e7554a5528.jpg', '<div id=\"u2437\" class=\"u2437\">\r\n	<div id=\"u2437_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">学习英语重要的就是背单词，而背单词是件辛苦的体力活，它需要平时不断的积累。如果能够充分的利用课堂外的零碎时间来背单词，可以获得出奇的效果，让背单词不再困难！课堂外背单词系列应用就是解决背单词的苦恼问题而开发的，希望利用移动互联网技术帮助学习英语单词。</span>\r\n		</p>\r\n	</div>\r\n</div>', '1411282260', '1', '0');
+
+-- ----------------------------
+-- Table structure for `t_product_cate`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_product_cate`;
+CREATE TABLE `t_product_cate` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `catename` varchar(50) NOT NULL DEFAULT '',
+  `sort` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `status` smallint(2) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_product_cate
+-- ----------------------------
+INSERT INTO `t_product_cate` VALUES ('1', '课堂外', '0', '1');
+INSERT INTO `t_product_cate` VALUES ('2', '财富宝宝', '0', '1');
+INSERT INTO `t_product_cate` VALUES ('3', '彩豆粒', '0', '1');
+INSERT INTO `t_product_cate` VALUES ('4', '米开宝宝', '0', '1');
 
 -- ----------------------------
 -- Table structure for `t_push_today`
@@ -2841,6 +2878,71 @@ INSERT INTO `t_role_user` VALUES ('3', '78');
 INSERT INTO `t_role_user` VALUES ('3', '80');
 INSERT INTO `t_role_user` VALUES ('3', '7');
 INSERT INTO `t_role_user` VALUES ('3', '23');
+
+-- ----------------------------
+-- Table structure for `t_scheme`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_scheme`;
+CREATE TABLE `t_scheme` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) NOT NULL DEFAULT '',
+  `case_cate_id` smallint(5) unsigned NOT NULL,
+  `thumb` varchar(100) NOT NULL DEFAULT '',
+  `description` text NOT NULL,
+  `created` int(11) unsigned NOT NULL DEFAULT '0',
+  `status` smallint(2) unsigned NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_scheme
+-- ----------------------------
+INSERT INTO `t_scheme` VALUES ('1', '移动解决管理系统', '1', 'Uploads/pic/scheme/2014/20140921/541e6f5e82732.png', '<p>\r\n	我们基于客户的品牌DNA开展移动互联网产品设计研究，探索和洞察客户的品牌特点、核心用户以及市场机会\r\n	<div id=\"u2288\" class=\"u2288\">\r\n		<div id=\"u2288_rtf\">\r\n			<p style=\"text-align:left;\">\r\n				<span style=\"font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#000000;\">我们基于客户的品牌DNA开展移动互联网产品设计研究，探索和洞察客户的品牌特点、核心用户以及市场机会，以确保每一项创新与商业价值的有效平衡。</span>\r\n			</p>\r\n		</div>\r\n	</div>\r\n</p>', '1411280734', '1');
+INSERT INTO `t_scheme` VALUES ('2', '移动解决管理系统', '1', 'Uploads/pic/scheme/2014/20140921/541e6f940306a.png', '<p>\r\n	我们基于客户的品牌DNA开展移动互联网产品设计研究，探索和洞察客户的品牌特点、核心用户以及市场机会，以确保每一项创新与商业价值的有效平衡。\r\n</p>', '1411280788', '1');
+
+-- ----------------------------
+-- Table structure for `t_scheme_cate`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_scheme_cate`;
+CREATE TABLE `t_scheme_cate` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `catename` varchar(50) NOT NULL DEFAULT '',
+  `desc` text NOT NULL,
+  `sort` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `status` smallint(2) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_scheme_cate
+-- ----------------------------
+INSERT INTO `t_scheme_cate` VALUES ('1', '移动解决管理系统', '<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	我们基于客户的品牌DNA开展移动互联网产品设计研究，探索和洞察客户的品牌特点、核心用户以及市场机会，以确保每一项创新与商业价值的有效平衡。帮助客户通过移动互联网获得与众不同的竞争力，增强盈利手段，提升品牌价值，从而成长为基业长青的事业。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>', '0', '1');
+INSERT INTO `t_scheme_cate` VALUES ('2', '智慧校园系统', '<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	教育信息化的发展不仅是解决知识的数字化、存储和传播，更多的是解决师生之间、学生之间跨越时间和跨地域的沟通与协作，这也是信息与通信技术融合发展趋势。华为凭借二十五年通信与信息领域的积累，致力成为全球教育\r\n</p>\r\n<p>\r\n	<br />\r\n</p>', '0', '1');
+INSERT INTO `t_scheme_cate` VALUES ('3', '设备移动管理', '<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	教育信息化的发展不仅是解决知识的数字化、存储和传播，更多的是解决师生之间、学生之间跨越时间和跨地域的沟通与协作，这也是信息与通信技术融合发展趋势。华为凭借二十五年通信与信息领域的积累，致力成为全球教育\r\n</p>\r\n<p>\r\n	<br />\r\n</p>', '0', '1');
+INSERT INTO `t_scheme_cate` VALUES ('4', '移动客户关系', '<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	教育信息化的发展不仅是解决知识的数字化、存储和传播，更多的是解决师生之间、学生之间跨越时间和跨地域的沟通与协作，这也是信息与通信技术融合发展趋势。华为凭借二十五年通信与信息领域的积累，致力成为全球教育\r\n</p>\r\n<p>\r\n	<br />\r\n</p>', '0', '1');
+INSERT INTO `t_scheme_cate` VALUES ('5', '移动办公OA', '<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	教育信息化的发展不仅是解决知识的数字化、存储和传播，更多的是解决师生之间、学生之间跨越时间和跨地域的沟通与协作，这也是信息与通信技术融合发展趋势。华为凭借二十五年通信与信息领域的积累，致力成为全球教育\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<br />', '0', '1');
+
+-- ----------------------------
+-- Table structure for `t_service`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_service`;
+CREATE TABLE `t_service` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) NOT NULL DEFAULT '',
+  `case_cate_id` smallint(5) unsigned NOT NULL,
+  `thumb` varchar(100) NOT NULL DEFAULT '',
+  `description` text NOT NULL,
+  `created` int(11) unsigned NOT NULL DEFAULT '0',
+  `status` smallint(2) unsigned NOT NULL DEFAULT '1',
+  `sort` smallint(2) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_service
+-- ----------------------------
+INSERT INTO `t_service` VALUES ('1', '企业移动化咨询', '11', 'Uploads/pic/service/2014/20140921/541e7f20f2c1e.png', '<div id=\"u1908\" class=\"u1908\">\r\n	<div id=\"u1908_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp; &nbsp; &nbsp; </span><span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">课\r\n堂外词场是公司自主开发的一款免费纯净无广告、自由选择离线与在线学习的背单词软件，旨在帮助你利用地铁公交等车、茶前饭后等他、宿舍楼下等她……一切碎\r\n片时间轻松移动学习。我们为分类独立开发大学英语四级版、六级版、考研版、MBA版、雅思、托福、GRE、GMAT、SAT、TOEIC、高考英语、考研\r\n英语、考博英语、英语应用能力三级 、剑桥商务英语、职称考试英语等全系列版本。</span>\r\n		</p>\r\n	</div>\r\n</div>', '0', '1', '0');
+INSERT INTO `t_service` VALUES ('2', '消费者移动产品咨询', '11', 'Uploads/pic/service/2014/20140921/541e7f4e6c2f5.png', '<div id=\"u1914\" class=\"u1914\">\r\n	<div id=\"u1914_rtf\">\r\n		<p style=\"text-align:left;\">\r\n			<span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">&nbsp; &nbsp; &nbsp; </span><span style=\"font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;\">课\r\n堂外词场是公司自主开发的一款免费纯净无广告、自由选择离线与在线学习的背单词软件，旨在帮助你利用地铁公交等车、茶前饭后等他、宿舍楼下等她……一切碎\r\n片时间轻松移动学习。我们为分类独立开发大学英语四级版、六级版、考研版、MBA版、雅思、托福、GRE、GMAT、SAT、TOEIC、高考英语、考研\r\n英语、考博英语、英语应用能力三级 、剑桥商务英语、职称考试英语等全系列版本。</span>\r\n		</p>\r\n	</div>\r\n</div>', '1411284814', '1', '0');
 
 -- ----------------------------
 -- Table structure for `t_setting`

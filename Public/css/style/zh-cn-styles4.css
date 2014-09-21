@@ -1,5 +1,5 @@
 .header {background: #3c86c5 url(img4/hdbg.gif) no-repeat right top;}
-.header .logo{background-image: url(img4/logo.gif)}
+.header .logo{background: url(img4/logo.gif) no-repeat center -20px;}
 .header .nav li, .header .nav li a{background-image: url(img4/nav_bg.png)}
 .header .nav li.tab_web a, .header .nav li.tab_web a span{background-image: url(img4/site.png);}
 .fav-help a{ background:none; height:auto; padding:0; margin:0 20px 0 0}
