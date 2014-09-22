@@ -118,7 +118,9 @@
                                                     <input type="checkbox" class="checkbox" value="1" name="chkall" onClick="check_all(this)" /></th>
                                                 <th width="50">编号</th>
                                                 <th width="300">标题</th>
+                                                <th width="200">分类</th>
                                                 <th> </th>
+                                                <th width="70">状态</th>
                                                 <th width="70">操作</th>
                                             </tr>
                                         </thead>
@@ -131,7 +133,9 @@
                                                 </td>
                                                 <th>{$vs.id}</th>
                                                 <th>{$vs.title}</th>
+                                                <th>{$vs.case_cate_id|getCaseCate}</th>
                                                 <th></th>
+                                                <td >{$vs.status|getStatus1}</td>
                                                 <td ><a href="__URL__/edit/id/{$vs.id}">编辑</a></td>
                                             </tr>
                                         </foreach>

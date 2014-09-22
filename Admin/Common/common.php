@@ -43,6 +43,17 @@ function fenlei($arr, $p_id = 0) {
     }
 }
 
+function getServiceCate($id){
+    return M('Arctype')->where('id = ' . $id . ' and p_id = 2 and status = 1')->getField('name');
+}
+
+function getCaseCate($id){
+    return M('CaseCate')->where('id = ' . $id . ' and status = 1')->getField('catename');
+}
+
+function getSchemeCate($id){
+    return M('SchemeCate')->where('id = ' . $id . ' and status = 1')->getField('catename');
+}
 function getProductCate($id){
     return M('ProductCate')->where('id = ' . $id . ' and status = 1')->getField('catename');
 }
