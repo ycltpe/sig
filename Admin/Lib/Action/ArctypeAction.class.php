@@ -91,7 +91,7 @@ class ArctypeAction extends CommonAction {
         $id = trim($_GET['id']);
         $name = $this->getActionName();
         $model = M($name);
-        $arr = $model->where('id <> ' . $id . ' and status = 1')->findAll();
+        $arr = $model->where('id <> ' . $id . ' and p_id = 0 and status = 1')->findAll();
         $this->assign('arr', $arr);
         $this->assign('id', $id);
         $this->edit();

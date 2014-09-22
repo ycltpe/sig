@@ -43,6 +43,9 @@ function fenlei($arr, $p_id = 0) {
     }
 }
 
+function getNewsCate($id){
+    return M('Arctype')->where('id = ' . $id . ' and p_id = 45 and status = 1')->getField('name');
+}
 function getServiceCate($id){
     return M('Arctype')->where('id = ' . $id . ' and p_id = 2 and status = 1')->getField('name');
 }

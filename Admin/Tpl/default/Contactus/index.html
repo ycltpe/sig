@@ -119,6 +119,7 @@
                                                 <th width="300">标题</th>
                                                 <th width="300">小标题</th>
                                                 <th></th>
+                                                <th width="70">状态</th>
                                                 <th width="70">操作</th>
                                             </tr>
                                         </thead>
@@ -132,6 +133,7 @@
                                                 <td >{$vs.title}</td>
                                                 <td >{$vs.lit_title}</td>
                                                 <td ></td>
+                                                <td >{$vs.status|getStatus1}</td>
                                                 <td ><a href="__URL__/edit/id/{$vs.id}">编辑</a></td>
                                             </tr>
                                         </foreach>

@@ -7,7 +7,7 @@
 		<link rel="Bookmark" href="__ROOT__/favicon.ico" >
 <script src="__PUBLIC__/js/jquery.js"></script>
 
-<title>『拿回扣管理系统平台』</title>
+<title>『行帆科技管理系统平台』</title>
 <link href="__PUBLIC__/css/reset.css" rel="stylesheet" type="text/css" />
 <link href="__PUBLIC__/css/zh-cn-system.css" rel="stylesheet"
 	type="text/css" />
@@ -48,9 +48,9 @@
     	&nbsp;&nbsp;&nbsp;&nbsp;<!-- <img src="__PUBLIC__/images/u_zx1.gif"> 聊天</a><span>|</span><a href="#">官方网站</a><span> --><!--|</span><a href="javascript:;" onClick="show_config()">授权</a><span>|</span><a href="javascript:;" onClick="show_feedback()">问题反馈</a> <a href="http://bbs.515158.com/" target="_blank">问题反馈</a><span>|</span><a href="http://bbs.515158.com/" target="_blank">帮助？</a>-->
  <ul id="Skin">
                 <li class="s4 styleswitch" rel="styles4"></li>
-		
+
 		<li class="s3 styleswitch" rel="styles3"></li>
-       
+
 	</ul>
         </div>
     </div>
@@ -78,24 +78,24 @@
 	<div class="content">
         	<iframe name="center_frame" id="center_frame" src="" frameborder="false" scrolling="auto" style="border:none" width="100%" height="auto" allowtransparency="true"></iframe>
             </div>
-			
+
         </div>
     <div class="col-auto mr8">
     <div class="crumbs">
     <div class="shortcut cu-span">
-	
+
 	</div>
     当前位置：<span id="current_pos">设置 > 后台用户管理</span></div>
     	<div class="col-1">
         	<div class="content" style="position:relative; overflow:hidden">
                 <iframe name="right" id="rightMain" frameborder="false" src="__APP__/AdminUser/index" scrolling="auto" style="border:none; margin-bottom:20px" width="100%" height="auto" allowtransparency="true"></iframe>
-				
+
                 <div class="fav-nav">
 					<div id="panellist">
 					</div>
                     <div class="fav-help">
 					<div id="status_text">
-			
+
 			</div>
 					</div>
 				</div>
@@ -104,13 +104,13 @@
     </div>
 </div>
 <!--<ul class="tab-web-panel hidden" style="position:absolute; z-index:999; background:#fff">
-	
+
 <li style="margin:0"><a href="" target="_blank"></a></li>
 
 </ul> -->
 <div class="scroll"><a href="javascript:;" class="per" title="使用鼠标滚轴滚动侧栏" onclick="menuScroll(1);"></a><a href="javascript:;" class="next" title="使用鼠标滚轴滚动侧栏" onclick="menuScroll(2);"></a></div>
 
-<script type="text/javascript"> 
+<script type="text/javascript">
 if(!Array.prototype.map)
 Array.prototype.map = function(fn,scope) {
   var result = [],ri = 0;
@@ -121,7 +121,7 @@ Array.prototype.map = function(fn,scope) {
   }
 return result;
 };
- 
+
 var getWindowSize = function(){
 return ["Height","Width"].map(function(name){
   return window["inner"+name] ||
@@ -131,7 +131,7 @@ return ["Height","Width"].map(function(name){
 window.onload = function (){
 	if(!+"\v1" && !document.querySelector) { // for IE6 IE7
 	  document.body.onresize = resize;
-	} else { 
+	} else {
 	  window.onresize = resize;
 	}
 	function resize() {
@@ -144,7 +144,7 @@ function wSize(){
 	var str=getWindowSize();
 	var strs= new Array(); //定义一数组
 	strs=str.toString().split(","); //字符分割
-	var heights = strs[0]-150,Body = $('body');$('#rightMain').height(heights);   
+	var heights = strs[0]-150,Body = $('body');$('#rightMain').height(heights);
 	//iframe.height = strs[0]-46;
 	if(strs[1]<980){
 		$('.header').css('width',980+'px');
@@ -157,10 +157,10 @@ function wSize(){
 		Body.attr('scroll','no');
 		Body.addClass('objbody');
 	}
-	
+
 	var openClose = $("#rightMain").height()+39;
 	$('#center_frame').height(openClose+9);
-	$("#openClose").height(openClose+30);	
+	$("#openClose").height(openClose+30);
 	$("#Scroll").height(openClose-20);
 	windowW();
 }
@@ -203,7 +203,7 @@ function clearh(){
 function hidden_site_list_1() {
 	h = setInterval("hidden_site_list()", 1);
 }
- 
+
 //左侧开关
 $("#openClose").click(function(){
 	if($(this).data('clicknum')==1) {
@@ -225,12 +225,12 @@ $("#openClose").click(function(){
 function _UpPwd(targetUrl) {
 	$("#rightMain").attr('src', targetUrl);
 }
- 
+
 function _M(menuid,targetUrl) {
 	$("#menuid").val(menuid);
 	$("#bigid").val(menuid);
 	$("#paneladd").html('<a class="panel-add" href="javascript:add_panel();"><em>添加</em></a>');
-	
+
 		$("#leftMain").load("__APP__/Public/menu?menuid="+menuid, {limit: 25}, function(){
 		   windowW();
 		 });
@@ -253,7 +253,7 @@ function _Mp(menuid) {
 	$.get("__APP__/Index/nodePosition?table=menu&name=menuname&menuid="+menuid, function(data){
 		$("#current_pos").html(data);
 	});
-	
+
 }
 function menuScroll(num){
 	var Scroll = document.getElementById('Scroll');
@@ -346,7 +346,7 @@ function StatusTextScroll()
 window.setInterval(StatusTextScroll,2000);
 
 </script>
-<script>        
+<script>
             function sethighlight(n) {
                 var lis = document.getElementsByTagName('span');
                 for(var i = 0; i < lis.length; i++) {
