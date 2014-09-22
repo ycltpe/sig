@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_iis
-Source Server Version : 50606
+Source Server Version : 50524
 Source Host           : localhost:3306
 Source Database       : nahuikou
 
 Target Server Type    : MYSQL
-Target Server Version : 50606
+Target Server Version : 50524
 File Encoding         : 65001
 
-Date: 2014-09-22 18:03:32
+Date: 2014-09-23 00:17:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -2554,6 +2554,26 @@ INSERT INTO `t_login_img` VALUES ('45', '商家端3', 'Uploads/pic/loginImg/2014
 INSERT INTO `t_login_img` VALUES ('46', '商家端4', 'Uploads/pic/loginImg/2014/20140505/53672d81c037f.png', 'Uploads/pic/loginImg/2014/20140505/m_53672d81c037f.png', 'Uploads/pic/loginImg/2014/20140505/s_53672d81c037f.png', null, null, '2', '1399270786');
 
 -- ----------------------------
+-- Table structure for `t_news`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_news`;
+CREATE TABLE `t_news` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) NOT NULL DEFAULT '',
+  `case_cate_id` smallint(5) unsigned NOT NULL,
+  `brief` varchar(200) NOT NULL DEFAULT '',
+  `description` text NOT NULL,
+  `created` int(11) unsigned NOT NULL DEFAULT '0',
+  `status` smallint(2) unsigned NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_news
+-- ----------------------------
+INSERT INTO `t_news` VALUES ('1', 'ssss', '46', '行帆员工嗨皮黄山，我和我的小伙伴们都爽呆了！ \r\n		\r\n		\r\n			\r\n \r\n		\r\n		\r\n			  \r\n		\r\n		\r\n			\r\n			\r\n		\r\n		\r\n			\r\n				\r\n					工作之余，让我们一览众山小！ \r\n				\r...', '<div id=\"u3\" class=\"u3\">\r\n	<div id=\"u3_rtf\">\r\n		<p style=\"text-align:center;\">\r\n			<span style=\"font-family:微软雅黑;font-size:28px;font-weight:bold;font-style:normal;text-decoration:none;color:#000000;\">行帆</span><span style=\"font-family:微软雅黑;font-size:28px;font-weight:bold;font-style:normal;text-decoration:none;color:#000000;\">员工嗨皮黄山，我和我的小伙伴们都爽呆了！</span> \r\n		</p>\r\n		<p style=\"text-align:center;\">\r\n			<br />\r\n<span style=\"font-family:微软雅黑;font-size:28px;font-weight:bold;font-style:normal;text-decoration:none;color:#000000;\"></span> \r\n		</p>\r\n		<p style=\"text-align:center;\">\r\n			<span style=\"font-family:微软雅黑;font-size:28px;font-weight:bold;font-style:normal;text-decoration:none;color:#000000;\"> </span> \r\n		</p>\r\n		<div id=\"u5\" class=\"u5_container\">\r\n			<div id=\"u6\" class=\"u6\">\r\n			</div>\r\n		</div>\r\n		<div id=\"u7\" class=\"u7\">\r\n			<div id=\"u7_rtf\">\r\n				<p style=\"text-align:center;\">\r\n					<span style=\"font-family:微软雅黑;font-size:20px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">工作之余，让我们一览众山小！</span> \r\n				</p>\r\n				<p style=\"text-align:center;\">\r\n					<span style=\"font-family:微软雅黑;font-size:20px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">行帆</span><span style=\"font-family:微软雅黑;font-size:20px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">公司员工于2013年12月1、2两天进行了精彩欢乐的黄山之旅。一路上笑声与美景共飞，欢乐与辛苦并存，</span> \r\n				</p>\r\n				<p style=\"text-align:center;\">\r\n					<span style=\"font-family:微软雅黑;font-size:20px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">看到了唯美的日出日落，也有相携相扶的温馨时刻，更多的是自由放松的哈皮笑脸。</span> \r\n				</p>\r\n				<p style=\"text-align:center;\">\r\n					<span style=\"font-family:微软雅黑;font-size:20px;font-weight:normal;font-style:normal;text-decoration:none;color:#666666;\">在黄山之巅，当问到“你幸福吗？”，小伙伴们纷纷表示：“我们都姓福”</span> \r\n				</p>\r\n			</div>\r\n		</div>\r\n<img src=\"/Uploads/attached/20140923000050_68592.png\" alt=\"\" /><img src=\"/Uploads/attached/20140923000050_40761.png\" alt=\"\" /><img src=\"/Uploads/attached/20140923000051_21192.png\" alt=\"\" /><br />\r\n		<p>\r\n			<br />\r\n		</p>\r\n	</div>\r\n</div>', '1411401658', '1');
+
+-- ----------------------------
 -- Table structure for `t_node`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_node`;
@@ -2574,7 +2594,7 @@ CREATE TABLE `t_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=160 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=162 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_node
@@ -2632,20 +2652,21 @@ INSERT INTO `t_node` VALUES ('142', 'Banner', 'Banner', 'Banner设置', '0', nul
 INSERT INTO `t_node` VALUES ('143', 'Case', 'Case', '案例管理', '0', null, '5', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('144', 'CaseCate', 'CaseCate', '案例分类管理', '0', null, '6', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('145', 'Tech', 'Tech', '技术天使', '0', null, '2', '1', '2', '0', '16');
-INSERT INTO `t_node` VALUES ('146', 'Partner', 'Partner', '合作伙伴', '0', null, '7', '1', '2', '0', '15');
-INSERT INTO `t_node` VALUES ('147', 'Customers', 'Customers', '我们的客户', '0', null, '8', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('146', 'Partner', 'Partner', '合作伙伴', '0', null, '12', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('147', 'Customers', 'Customers', '我们的客户', '0', null, '13', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('148', 'Team', 'Team', '创始团队', '0', null, '15', '1', '2', '0', '15');
-INSERT INTO `t_node` VALUES ('149', 'Advantage', 'Advantage', '行帆优势', '0', null, '10', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('149', 'Advantage', 'Advantage', '行帆优势', '0', null, '14', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('150', 'Brief', 'Brief', '公司简介和文化', '0', null, '4', '1', '2', '0', '16');
 INSERT INTO `t_node` VALUES ('151', 'History', 'History', '行帆历程', '0', null, '17', '1', '2', '0', '15');
-INSERT INTO `t_node` VALUES ('152', 'Jobs', 'Jobs', '招贤纳士', '0', null, '12', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('152', 'Jobs', 'Jobs', '招贤纳士', '0', null, '15', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('153', 'Interactive', 'Interactive', '互动平台', '0', null, '3', '1', '2', '0', '16');
 INSERT INTO `t_node` VALUES ('154', 'Contactus', 'Contactus', '联系我们', '0', null, '30', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('155', 'SchemeCate', 'SchemeCate', '方案分类管理', '0', null, '4', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('156', 'Scheme', 'Scheme', '方案管理', '0', null, '3', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('157', 'ProductCate', 'ProductCate', '产品分类管理', '0', null, '2', '1', '2', '0', '15');
 INSERT INTO `t_node` VALUES ('158', 'Product', 'Product', '产品管理', '0', null, '1', '1', '2', '0', '15');
-INSERT INTO `t_node` VALUES ('159', 'Service', 'Service', '我们的服务', '0', null, '9', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('159', 'Service', 'Service', '我们的服务', '0', null, '10', '1', '2', '0', '15');
+INSERT INTO `t_node` VALUES ('160', 'News', 'News', '新闻管理', '0', null, '7', '1', '2', '0', '15');
 
 -- ----------------------------
 -- Table structure for `t_order`
